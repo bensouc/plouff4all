@@ -2,7 +2,7 @@ class CreateSwimmingPools < ActiveRecord::Migration[6.0]
   def change
     create_table :swimming_pools do |t|
       t.references :user, null: false, foreign_key: true
-      t.string :name
+      t.string :name, null: false
       t.text :description
       t.string :address
       t.integer :length
