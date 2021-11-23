@@ -1,1 +1,84 @@
 // Specific CSS for your home-page
+body{
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+  padding: 0;
+}
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin: 0;
+  h1{
+    font-family: Roboto;
+    margin: 0;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    opacity: 0.9;
+    font-size: 32px;
+    line-height: 36px;
+    strong {
+      color: $white;
+      opacity: 1.0;
+      font-size: 36px;
+    }
+  }
+  p{
+    font-size: 20px;
+    color: white;
+    opacity: .8;
+    // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+.separator{
+  background-position: center;
+  padding: 50px 150px;
+  margin: 0;
+}
+.choose {
+  font-size: 24px;
+  color: $darkgrey
+
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  height: 60px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 850px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
