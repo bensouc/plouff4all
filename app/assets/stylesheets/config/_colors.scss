@@ -1,10 +1,17 @@
 // Define variables for your color scheme
 
 // For example:
-$red: #FD1015;
-$blue: #167FFB;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+// Default color - do not removex
+$white: #ffffff;
+$gray: #F4F4F4;
+$yellow: yellow;
+$red: red;
+$orange: orange;
+
+// My color to use for the template
+$blue: #138AAB;
+// $blue-hover: #7dc3d6;
+$green: #5E9146; // utliser pour mettre en avant des promos
+$purple: #6E0089; // utiliser pour mettre en avant des features spéciales type : étoiles de rating
+$darkgrey: #484848;
+$light-gray: #767676ea;
