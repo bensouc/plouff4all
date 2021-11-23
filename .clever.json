@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_beb7f064-de42-4ce6-a97b-71089ac766af",
+      "org_id": "user_3fe15f60-a128-48e9-8366-2a86f329cb99",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_beb7f064-de42-4ce6-a97b-71089ac766af.git",
+      "name": "plouff4all",
+      "alias": "plouff4all"
+    }
+  ]
+}
