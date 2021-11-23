@@ -214,14 +214,18 @@ body {
   justify-content: space-around;
   .item {
     background-color: white;
-    padding: 10px 10px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
-    border-radius: 10px;
+    border-radius: 4px 4px 0% 0%;
+    // padding: 10px 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
     .location {
       margin-top: 5px;
+      margin-bottom: 5px;
     }
     .rating {
       color: $purple;
+    }
+    .content-home-swimming {
+      padding: 5px 10px;
     }
   }
   img {
