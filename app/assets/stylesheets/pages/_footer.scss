@@ -1,8 +1,11 @@
 .footer{
-  background-color: rgb(245, 245, 245);
+  background-color: rgba(75, 69, 69, 0.2)
 }
 
 .pool_img{
-  height: 100px;
+  height: 80px;
   width: 100px;
+  -webkit-box-shadow: 5px 2px 15px 0px rgba(124, 110, 202, 0.68);
+  box-shadow: 5px 2px 15px 0px rgba(124, 110, 202, 0.68);
+  border-radius: 5px;
 }
