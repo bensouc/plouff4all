@@ -1,37 +1,13 @@
-<h1>Beautiful pool not overlooked with a play area</h1>
-<%= @swimming_pool.name %>
+<h2>NAVBAR</h2>
 
+<div class container>
+</h1>Beautiful pool not overlooked with a play area</h1>
+</div>
 
 #carousel
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <% @post_images.drop(1).count.times do |index| %>
-      <li data-target="#carouselExampleIndicators" data-slide-to="#{index}"></li>
-    <% end %>
-  </ol>
 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <% @post_images.first(1).each do |image| %>
-        <%= attachment_image_tag image, :image, class: "carousel_image"  %>
-      <% end %>
-    </div>
-    <% @post_images.drop(1).each do |image| %>
-      <div class="carousel-item">
-        <%= attachment_image_tag image, :image, class: "carousel_image" %>
-      </div>
-    <% end %>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+<%= @swimming_pool.name %>
 
 #détails avec li
 
