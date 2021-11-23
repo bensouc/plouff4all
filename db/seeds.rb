@@ -53,7 +53,7 @@ pool_test2 = SwimmingPool.create!(
   pets_friendly: 'true',
   user_id: owner_test.id,
 )
-pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
+pool_test2.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
                   filename: 'moche.jpg')
 
 puts 'create bookings'
