@@ -1,30 +1,35 @@
 <h2>NAVBAR</h2>
 
-<div class container>
-</h1>Beautiful pool not overlooked with a play area</h1>
+<div class="container">
+  <h1 class="text-center"><%= @swimming_pool.name.capitalize %></h1>
+  <h2 class="text-center">Proposed by <%= @swimming_pool.user.first_name.capitalize %></h2>
+
+  <div class="description-show-swimming">
+    <div class="item photo-show-swimming">
+      <%= cl_image_tag  @swimming_pool.photo.key %>
+    </div>
+    <div class="item feature-swimming">
+      <h3>Caractéristiques</h3>
+      <ul>
+        <li><i class="fas fa-water"></i> <strong> <%= @swimming_pool.length %>m</strong> length</li>
+        <li><i class="fas fa-water"></i> <strong><%= @swimming_pool.width %>m</strong> width</li>
+        <li><i class="fas fa-swimmer"></i> <%= @swimming_pool.max_depth %>m of max depth</li>
+        <li><i class="fas fa-temperature-high"></i> <%= @swimming_pool.temperature %>°C </li>
+        <li><i class="fas fa-users"></i> <%= @swimming_pool.max_people %> people max per reservation</li>
+        <li><i class="fas fa-location-arrow"></i> <%= @swimming_pool.address.capitalize %></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class= "text-center description-swimming-pools">
+    <h2 class="text-center">Description</h2>
+    <p class="text-center"><%= @swimming_pool.description %></p>
+  </div>
+
+  <div class="text-center">
+     <%= link_to "J'aime, je reserve !!", "", class: "btn btn-gradient text-center"  %>
+  </div>
+
+
 </div>
-
-#carousel
-
-
-<%= @swimming_pool.name %>
-
-#détails avec li
-
- name: 'plouf1',
-  description: 'c froid',
-  address: 'nantes',
-  length: '12',
-  width: '12',
-  max_depth: '3',
-  price_per_day: '500',
-  treatment: 'natural',
-  temperature: '25',
-  max_people: '152',
-  kids_friendly: true,
-  pets_friendly: 'false',
-  user_id: owner_test.id
-)
-#add text
-#add map
-#add je reserve? ou voir dispo

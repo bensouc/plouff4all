@@ -15,3 +15,13 @@ $green: #5E9146; // utliser pour mettre en avant des promos
 $purple: #6E0089; // utiliser pour mettre en avant des features spéciales type : étoiles de rating
 $darkgrey: #484848;
 $light-gray: #767676ea;
+
+
+body h2, h3, h4, p {
+
+  color: $darkgrey;
+}
+
+ h1 {
+   color: $blue
+}
