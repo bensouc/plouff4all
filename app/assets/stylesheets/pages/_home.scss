@@ -35,12 +35,51 @@ body{
   background-position: center;
   padding: 50px 150px;
   margin: 0;
+  p{
+    color:$light-gray;
+    font-size: 16px;
+  }
 }
 .choose {
   font-size: 24px;
-  color: $darkgrey
-
+  color: $darkgrey;
 }
+// CARDS univers
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: $darkgrey;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+// CARDS détail
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -81,4 +120,33 @@ body{
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+
+// FOOTER
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
 }
