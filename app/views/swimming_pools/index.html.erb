@@ -1,0 +1,41 @@
+
+
+
+<div class="box">
+  <% @swimming_pools.each do |pool| %>
+    <%= link_to swimming_pool_path(pool) do %>
+      <div class="card-index">
+        <%= cl_image_tag pool.photo.key %>
+        <div class="card-index-infos">
+          <div>
+            <h2><%= pool.name %></h2>
+            <p><%= pool.description %></p>
+          </div>
+          <div>
+            <h2><%= pool.address %></h2>
+            <h2 class="card-index-pricing"><%= pool.price_per_day %> €</h2>
+          </div>
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <% @swimming_pools.each do |pool| %>
+    <%= link_to swimming_pool_path(pool) do %>
+      <div class="card-index">
+        <%= cl_image_tag pool.photo.key %>
+        <div class="card-index-infos">
+          <div>
+            <h2><%= pool.name %></h2>
+            <p><%= pool.description %></p>
+          </div>
+          <div>
+            <h2><%= pool.address %></h2>
+            <h2 class="card-index-pricing"><%= pool.price_per_day %> €</h2>
+          </div>
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
