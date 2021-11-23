@@ -1,8 +1,11 @@
 // Specific CSS for your home-page
-body{
+body {
   background-color: rgb(245, 245, 245);
   margin: 0;
   padding: 0;
+  h1 {
+    color: $darkgrey;
+  }
 }
 .banner {
   background-size: cover;
@@ -33,7 +36,16 @@ body{
 }
 .separator{
   background-position: center;
-  padding: 50px 150px;
+  padding: 30px 150px;
+  margin: 0;
+  p{
+    color:$light-gray;
+    font-size: 16px;
+  }
+}
+.separator2{
+  background-position: center;
+  padding: 80px 150px 0 150px;
   margin: 0;
   p{
     color:$light-gray;
@@ -47,11 +59,12 @@ body{
 // CARDS univers
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 80px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 4px;
 }
 
 .card-product img {
@@ -87,66 +100,151 @@ body{
   height: 60px;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.cards2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 6px;
+  height: 60px;
 }
+// // Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
+// @media (min-width: 768px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 850px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// CARDS 2
+// .cards2{
+//   width: 80%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .container2 {
+//   grid-template-columns: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// CARD Best-price
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 330px;
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 850px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
 
-// FOOTER
-.footer {
-  background: #F4F4F4;
+.card-trip .card-trip-infos {
+  padding: 16px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  align-items: flex-end;
+  position: relative;
+  p{
+    font-size: 10px;
+    color: $light-gray;
+  }
+  h2{
+    padding-top: 8px;
+    font-size: 16px;
+    color: $darkgrey;
+  }
+  h3{
+    font-size: 14px;
+    font-weight: 300;
+    color: $darkgrey
+  }
+  h4{
+    font-size: 12px;
+    font-weight: 700;
+    color: $purple;
+  }
 }
-.footer-links {
+
+.top-rated-box {
   display: flex;
   align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
+  justify-content: space-around;
+  .item {
+    background-color: white;
+    padding: 10px 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    .location {
+      margin-top: 5px;
+    }
+    .rating {
+      color: $purple;
+    }
+  }
+  img {
+    width: 155px;
+    border-radius: 4px;
+  }
+  p{
+    font-size: 10px;
+    color: $light-gray;
+  }
+  h2{
+    // padding-top: 8px;
+    font-size: 16px;
+    color: $darkgrey;
+  }
+  h3{
+    font-size: 8px;
+    font-weight: 300;
+    color: $darkgrey
+  }
+  h4{
+    font-size: 12px;
+    font-weight: 700;
+    color: $darkgrey;
+  }
 }
