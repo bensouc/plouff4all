@@ -26,8 +26,20 @@
   </div>
 </div>
 
-<ul>
-  <% @swimming_pools.each do |pool| %>
-    <li><%= pool.name %></li>
-  <% end %>
-</ul>
+
+<% @swimming_pools.each do |pool| %>
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= pool.name %></h2>
+        <p><%= pool.description %></p>
+      </div>
+      <div>
+        <h2><%= pool.address %></h2>
+        <h2 class="card-trip-pricing"><%= pool.price_per_day %> €</h2>
+      </div>
+      <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+    </div>
+  </div>
+<% end %>

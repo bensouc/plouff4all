@@ -1,5 +1,5 @@
 class SwimmingPoolsController < ApplicationController
   def index
-    @swimming_pools = Swimming_pool.all
+    @swimming_pools = SwimmingPool.all
   end
 end
