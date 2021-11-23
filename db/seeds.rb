@@ -33,8 +33,10 @@ pool_test = SwimmingPool.create!(
   max_people: '152',
   kids_friendly: true,
   pets_friendly: 'false',
-  user_id: owner_test.id
+  user_id: owner_test.id,
 )
+pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
+                  filename: 'pool.jpg')
 
 pool_test2 = SwimmingPool.create!(
   name: 'plouf2',
@@ -49,8 +51,10 @@ pool_test2 = SwimmingPool.create!(
   max_people: '152',
   kids_friendly: false,
   pets_friendly: 'true',
-  user_id: owner_test.id
+  user_id: owner_test.id,
 )
+pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
+                  filename: 'moche.jpg')
 
 puts 'create bookings'
 
