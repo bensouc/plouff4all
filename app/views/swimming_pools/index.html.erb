@@ -25,3 +25,9 @@
     </ul>
   </div>
 </div>
+
+<ul>
+  <% @swimming_pools.each do |pool| %>
+    <li><%= pool.name %></li>
+  <% end %>
+</ul>
