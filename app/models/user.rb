@@ -13,4 +13,6 @@ class User < ApplicationRecord
   # as renter , list all my bookings related to my rents
   has_many :bookings_as_renter, dependent: :destroy, class_name: 'Booking'
 
+  has_one_attached :photo
+
 end
