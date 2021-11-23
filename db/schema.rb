@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_171335) do
+ActiveRecord::Schema.define(version: 2021_11_23_093811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_171335) do
     t.integer "temperature"
     t.integer "max_people"
     t.boolean "kids_friendly"
-    t.string "pets_friendly_boolean"
+    t.string "pets_friendly"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_swimming_pools_on_user_id"
