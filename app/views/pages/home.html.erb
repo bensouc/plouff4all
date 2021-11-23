@@ -7,7 +7,7 @@
 </div>
 <div class="separator">
   <div class="choose">Choose your univers</div>
-  <p></p>
+  <p>Logoden biniou degemer mat an penn ar bed start ha hantereur tremen c'heuz geot armel itron lerenn kazh stagañ setu toullañ pemzek bier yaouank marteze romant, er abred eizhvet gwiskamant gounez</p>
     <%# <div class="card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
@@ -21,17 +21,51 @@
 <div class="cardsholder">
   <div class="container">
     <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Breakfast
+      <div class="card-product">
+        <img src="https://cache.marieclaire.fr/data/photo/w1280_c17/5q/petite-piscine-pas-chere-ubbink.webp" />
+          <div class="card-product-infos">
+            <h2>Budget special</h2>
+            <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
+          </div>
       </div>
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-        Lunch
+      <div class="card-product">
+        <img src="https://images.squarespace-cdn.com/content/v1/57b5df31414fb5af39b6647b/1472049184617-4JQLQBDTVJAO8WNY8X7Q/photographe-famille-lifestyle.jpg" />
+          <div class="card-product-infos">
+            <h2>Child friendly</h2>
+            <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
+          </div>
       </div>
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-        Dinner
+      <div class="card-product">
+        <img src="https://www.piscine-clic.com/news/wp-content/uploads/2014/01/1a.jpg" />
+          <div class="card-product-infos">
+            <h2>Pets friendly</h2>
+            <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
+          </div>
       </div>
     </div>
   </div>
+</div>
+<div class="separator2">
+  <div class="choose">Our top rated Ploof's</div>
+  <p>Logoden biniou degemer mat an penn ar bed start ha hantereur tremen c'heuz </p>
+  </div>
+</div>
+
+
+
+<div class="top-rated-box">
+  <% @swimming_pools.each do |pool| %>
+    <div class="item">
+      <%= cl_image_tag pool.photo.key %>
+      <div class="content-home-swimming">
+        <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+        <h2><%= pool.name %></h2>
+        <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
+        <h4><i class="fas fa-tags"></i> Price: <%= pool.price_per_day %>$/day </h4>
+        <h4 class="rating">5.0 ★</h4>
+      </div>
+    </div>
+  <% end %>
 </div>
