@@ -29,7 +29,8 @@
 
 <% @swimming_pools.each do |pool| %>
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", />
+    <%= cl_image_tag photo.key %>
+    <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", /> -->
     <div class="card-trip-infos">
       <div>
         <h2><%= pool.name %></h2>
