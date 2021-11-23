@@ -102,7 +102,7 @@ pool_test5 = SwimmingPool.create!(
   price_per_day: '200',
   treatment: 'natural',
   temperature: '20',
-  max_people: '5',
+  max_people: '6',
   kids_friendly: true,
   pets_friendly: 'true',
   user_id: owner_test.id,
