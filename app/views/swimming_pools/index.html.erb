@@ -1,37 +1,41 @@
 
+
+
 <div class="box">
   <% @swimming_pools.each do |pool| %>
-      <div class="card-trip">
+    <%= link_to swimming_pool_path(pool) do %>
+      <div class="card-index">
         <%= cl_image_tag pool.photo.key %>
-        <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", /> -->
-        <div class="card-trip-infos">
+        <div class="card-index-infos">
           <div>
             <h2><%= pool.name %></h2>
             <p><%= pool.description %></p>
           </div>
           <div>
             <h2><%= pool.address %></h2>
-            <h2 class="card-trip-pricing"><%= pool.price_per_day %> €</h2>
+            <h2 class="card-index-pricing"><%= pool.price_per_day %> €</h2>
           </div>
-          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
         </div>
       </div>
+    <% end %>
   <% end %>
-
   <% @swimming_pools.each do |pool| %>
-      <div class="card-trip">
+    <%= link_to swimming_pool_path(pool) do %>
+      <div class="card-index">
         <%= cl_image_tag pool.photo.key %>
-        <div class="card-trip-infos">
+        <div class="card-index-infos">
           <div>
             <h2><%= pool.name %></h2>
             <p><%= pool.description %></p>
           </div>
           <div>
             <h2><%= pool.address %></h2>
-            <h2 class="card-trip-pricing"><%= pool.price_per_day %> €</h2>
+            <h2 class="card-index-pricing"><%= pool.price_per_day %> €</h2>
           </div>
-          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
         </div>
       </div>
+    <% end %>
   <% end %>
 </div>
