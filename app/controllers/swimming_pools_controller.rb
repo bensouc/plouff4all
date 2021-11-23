@@ -4,4 +4,8 @@ class SwimmingPoolsController < ApplicationController
   end
 
 
+
+  def show
+    @swimming_pool = SwimmingPool.find(params[:id])
+  end
 end
