@@ -1,0 +1,2 @@
+class SwimmingPool < ApplicationRecord
+end
