@@ -17,10 +17,10 @@ Booking.destroy_all
 
 
 puts "creating user"
-owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'fn_owner',last_name:  'popo',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Louis',last_name:  'Plouff',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'owner',address: 'nantes',phone_number: '0604584584')
 
-renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'fn_user',last_name:  'popo',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'Hélène',last_name:  'Lemoine',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'renter',address: 'nantes',phone_number: '0604584584')
 
 
@@ -180,13 +180,13 @@ pool_test9 = SwimmingPool.create!(
   description: "A la recherche de la fiesta de votre vie? Nous avons tout prévus pour vous.
   Venez vous oubliez dans notre paradis de la TEUFFFFFF!!!",
   address: 'nantes',
-  length: '16',
-  width: '5',
+  length: '25',
+  width: '30',
   max_depth: '2',
-  price_per_day: '150',
+  price_per_day: '1500',
   treatment: 'chlore',
   temperature: '28',
-  max_people: '10',
+  max_people: '150',
   kids_friendly: false,
   pets_friendly: 'true',
   user_id: owner_test.id
