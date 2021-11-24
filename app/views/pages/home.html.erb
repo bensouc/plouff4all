@@ -58,7 +58,7 @@
 <div class="top-rated-box">
   <% @swimming_pools.each do |pool| %>
     <div class="item">
-      <%= cl_image_tag pool.photo.key %>
+      <div class="photo"> <%= cl_image_tag pool.photo.key, :height=>100%></div>
       <div class="content-home-swimming">
         <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
         <h2><%= pool.name %></h2>

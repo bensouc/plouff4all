@@ -19,7 +19,7 @@ renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_n
   role: 'renter',address: 'nantes',phone_number: '0604584584')
 
 
-  puts "create swmming pools"
+  puts "create swimming pools"
 pool_test = SwimmingPool.create!(
   name: 'plouf1',
   description: 'c froid',
@@ -54,6 +54,60 @@ pool_test2 = SwimmingPool.create!(
   user_id: owner_test.id,
 )
 pool_test2.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
+                  filename: 'moche.jpg')
+
+pool_test3 = SwimmingPool.create!(
+  name: 'Biiig Poool !',
+  description: 'Trèèèèèèès long bassin en pleine Sologne.',
+  address: 'Orléans',
+  length: '200',
+  width: '12',
+  max_depth: '3',
+  price_per_day: '300',
+  treatment: 'chlore',
+  temperature: '25',
+  max_people: '152',
+  kids_friendly: false,
+  pets_friendly: 'true',
+  user_id: owner_test.id,
+)
+pool_test3.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
+                  filename: 'pool.jpg')
+
+pool_test4 = SwimmingPool.create!(
+  name: 'Cenote',
+  description: "Fosse de plongée en eaux troubles... Température stable toute l'année",
+  address: 'Brest',
+  length: '3',
+  width: '3',
+  max_depth: '15',
+  price_per_day: '500',
+  treatment: 'natural',
+  temperature: '10',
+  max_people: '3',
+  kids_friendly: false,
+  pets_friendly: 'false',
+  user_id: owner_test.id,
+)
+pool_test4.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
+                  filename: 'moche.jpg')
+
+pool_test5 = SwimmingPool.create!(
+  name: 'Pediluve',
+  description: 'Pour le nettoyage des sabots au retour de vos promenades',
+  address: 'Hocqueville',
+  length: '50',
+  width: '20',
+  max_depth: '3',
+  price_per_day: '200',
+  treatment: 'natural',
+  temperature: '20',
+  max_people: '6',
+  kids_friendly: true,
+  pets_friendly: 'true',
+  user_id: owner_test.id,
+)
+pool_test5.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
                   filename: 'moche.jpg')
 
 puts 'create bookings'

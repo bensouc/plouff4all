@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
 body {
   background-color: rgb(245, 245, 245);
   margin: 0;
@@ -90,6 +94,7 @@ body {
 
 .card-product .card-product-infos {
   padding: 16px;
+  border-radius: 4px;
 }
 
 // CARDS détail
@@ -106,56 +111,6 @@ body {
   grid-gap: 6px;
   height: 60px;
 }
-
-
-// // Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 850px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// CARDS 2
-// .cards2{
-//   width: 80%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .container2 {
-//   grid-template-columns: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
 
 // CARD Best-price
 .card-trip {
@@ -213,12 +168,19 @@ body {
 .top-rated-box {
   display: flex;
   align-items: center;
+
   justify-content: space-evenly;
+  border-radius: 4px;
+
   .item {
     background-color: white;
-    border-radius: 4px 4px 0% 0%;
+    border-radius: 4px;
     // padding: 10px 10px;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
+  .photo{
+    border-radius: 10px 10px 0% 0%;
+    height: 100%;
+  }
     .location {
       margin-top: 5px;
       margin-bottom: 5px;
@@ -230,6 +192,7 @@ body {
       padding: 5px 10px;
     }
   }
+
   img {
     width: 155px;
     border-radius: 4px;
