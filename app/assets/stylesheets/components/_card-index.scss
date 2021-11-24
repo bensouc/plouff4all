@@ -1,10 +1,27 @@
+
+
+.box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  gap: 25px;
+  flex-shrink: 1;
+  // background-color: $light-gray;
+  :hover {
+    text-decoration: none;
+  }
+}
+
 .card-index {
   overflow: hidden;
   background: white;
   color: $darkgrey;
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
   width: 18vw;
-  max-height: 13.5vw;
+  height: 245px;
+  max-height: 300px;
   margin-top: 5vh;
   border-radius: 4px;
   :hover {
@@ -25,7 +42,7 @@
 }
 
 .card-index > img {
-  height: 20vh;
+  height: 150px;
   width: 100%;
   object-fit: cover;
 }
