@@ -1,0 +1,13 @@
+.sign-in-box {
+  display: flex;
+  .item {
+    width: 50%;
+    &:last-child {
+      padding: 50px 50px;
+    }
+  }
+  img {
+    width: 100%;
+    min-height: 60vh;
+  }
+}
