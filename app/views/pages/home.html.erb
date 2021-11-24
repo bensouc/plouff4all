@@ -2,7 +2,15 @@
   <div class="container">
     <h1>Welcome on <strong>Ploof4all </strong>our ploof is your ploof</h1>
     <p>Change your day, learn to swim </p>
-    <a class="btn btn-flat" href="/swimming_pools">Let's dive ! 🐸</a>
+    <%# <a class="btn btn-flat" href="/swimming_pools">Let's dive ! 🐸</a> %>
+    <div class="search-bar mt-5">
+      <form action="/swimming_pools">
+        <div class="form-group d-flex align-items-center">
+          <input type="search" class="form-control search-control" name="query" id="search" placeholder="Swimming pool located in..." method="GET">
+          <button type="submit" class="btn btn-flat search-btn"> 🐸 </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 <div class="separator">
@@ -66,7 +74,7 @@
         -->
 
 <div class="separator2">
-  <div class="choose">Our top rated Ploof's</div>
+  <div class="choose">Our top rated Ploof</div>
   <p>Some of our top rated Ploof around the globe !!</p>
   </div>
 </div>
@@ -82,7 +90,7 @@
         <p class="location"> <%= pool.address.capitalize %></p>
         <h2><%= pool.name %></h2>
         <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-        <h4> <%= pool.price_per_day %>$/day </h4>
+        <h4> <%= pool.price_per_day %>€/day </h4>
         <h4 class="rating">5.0 ★</h4>
       </div>
     </div>
