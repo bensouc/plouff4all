@@ -11,5 +11,6 @@ class SwimmingPoolsController < ApplicationController
 
   def show
     @swimming_pool = SwimmingPool.find(params[:id])
+    @swimming_pools = SwimmingPool.all.sample(4)
   end
 end

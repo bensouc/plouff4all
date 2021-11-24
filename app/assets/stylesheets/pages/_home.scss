@@ -112,7 +112,6 @@ body {
   height: 60px;
 }
 
-
 // CARD Best-price
 .card-trip {
   overflow: hidden;
@@ -169,8 +168,10 @@ body {
 .top-rated-box {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+
+  justify-content: space-evenly;
   border-radius: 4px;
+
   .item {
     background-color: white;
     border-radius: 4px;
