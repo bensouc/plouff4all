@@ -1,0 +1,35 @@
+
+<div class="sign-in-box">
+  <div class="image-sign-in item">
+    <img src="https://cdn-s-www.lejsl.com/images/7AB5E45A-7A81-4C63-B154-F9220AB44641/NW_raw/un-plongeon-a-la-piscine-photo-jsl-photo-cl-1597933389.jpg" alt="">
+  </div>
+
+
+  <div class="form-sign-in item">
+      <h2>Sign up</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "I want to swmin, sign me up!", class:"btn btn-flat" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+<br><BR><BR>
