@@ -29,8 +29,18 @@
     <p class="text-center"><%= @swimming_pool.description %></p>
   </div>
 
-  <div class="text-center">
-     <%= link_to "I want to swmin in it ! Let's book", "", class: "btn btn-gradient text-center"  %>
+  # <div class="text-center">
+  #    <%= link_to "I want to swmin in it ! Let's book", "", class: "btn btn-gradient text-center"  %>
+  # </div>
+
+  <div class="form_container">
+    <form action="/bookings/new">
+      <div class="form-group d-flex align-items-center">
+        <input type="date" class="start_date" name="query" id="start"
+          placeholder="Entrez la date de début" method="GET">
+        <button type="submit" class="btn btn-flat search-btn"> 🐸 </button>
+      </div>
+    </form>
   </div>
 
 
