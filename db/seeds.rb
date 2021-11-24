@@ -5,32 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 puts "destroying current data"
 User.destroy_all
 SwimmingPool.destroy_all
 Booking.destroy_all
 
+
+
+
+
 puts "creating user"
-owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'fn_owner',last_name:  'popo',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Louis',last_name:  'Plouff',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'owner',address: 'nantes',phone_number: '0604584584')
 
-renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'fn_user',last_name:  'popo',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'Hélène',last_name:  'Lemoine',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'renter',address: 'nantes',phone_number: '0604584584')
 
 
   puts "create swimming pools"
 pool_test = SwimmingPool.create!(
-  name: 'plouf1',
-  description: 'c froid',
-  address: 'nantes',
-  length: '12',
+  name: 'Corléone Pistoche',
+  description: 'Superbe piscine à déversement, avec vue sur la Méditerranée.
+                Un contour en bois exotique et un jardin fleuri enchantera vos moments autour de notre piscine. ',
+  address: 'Cassis',
+  length: '20',
   width: '12',
-  max_depth: '3',
+  max_depth: '2',
   price_per_day: '500',
   treatment: 'natural',
   temperature: '25',
-  max_people: '152',
+  max_people: '10',
   kids_friendly: true,
   pets_friendly: 'false',
   user_id: owner_test.id,
@@ -39,76 +45,155 @@ pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg
                   filename: 'pool.jpg')
 
 pool_test2 = SwimmingPool.create!(
-  name: 'plouf2',
-  description: 'c chaud',
+  name: 'Une très belle piscine',
+  description: 'Piscine rectangulaire 8x4m, chauffée.
+ Pour partager des moments inoubliables entre amis ou en famille. Animaux non admis',
   address: 'nantes',
-  length: '12',
-  width: '12',
-  max_depth: '3',
+  length: '8',
+  width: '4',
+  max_depth: '2',
   price_per_day: '500',
   treatment: 'natural',
   temperature: '25',
   max_people: '152',
-  kids_friendly: false,
-  pets_friendly: 'true',
-  user_id: owner_test.id,
+  kids_friendly: true,
+  pets_friendly: 'false',
+  user_id: owner_test.id
 )
-pool_test2.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
-                  filename: 'moche.jpg')
+file = URI.open('http://galeriephotos.desjoyaux.fr/_data/i/upload/2015/06/29/20150629105203-05465bf1-la.jpg')
+pool_test2.photo.attach(io: file, filename: '20150629105203-05465bf1-la.jpg', content_type: 'image/jpg')
 
 pool_test3 = SwimmingPool.create!(
-  name: 'Biiig Poool !',
-  description: 'Trèèèèèèès long bassin en pleine Sologne.',
-  address: 'Orléans',
-  length: '200',
+  name: 'Avec vue sur mer',
+  description: 'La plus belle des piscines au sein de notre propriété. Découvrez les éléments qui feront de ce moment, une expérience unique pas comme les autres, avec une piscine de luxe',
+  address: 'Saint-Laurent-du-Var, France',
+  length: '20',
   width: '12',
-  max_depth: '3',
+  max_depth: '2',
   price_per_day: '300',
-  treatment: 'chlore',
+  treatment: 'natural',
   temperature: '25',
-  max_people: '152',
-  kids_friendly: false,
+  max_people: '10',
+  kids_friendly: true,
   pets_friendly: 'true',
-  user_id: owner_test.id,
+  user_id: owner_test.id
 )
-pool_test3.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
-                  filename: 'pool.jpg')
+file = URI.open('https://img.archiexpo.fr/images_ae/photo-mg/2251-16186421.jpg')
+pool_test3.photo.attach(io: file, filename: '2251-16186421.jpg', content_type: 'image/jpg')
 
 pool_test4 = SwimmingPool.create!(
-  name: 'Cenote',
-  description: "Fosse de plongée en eaux troubles... Température stable toute l'année",
-  address: 'Brest',
-  length: '3',
-  width: '3',
-  max_depth: '15',
-  price_per_day: '500',
+  name: 'Tropical Island Paradise',
+  description: "Combinez une expérience de naviagation et privatiser notre piscine de luxe",
+  address: 'port de nice',
+  length: '25',
+  width: '20',
+  max_depth: '5',
+  price_per_day: '1500',
   treatment: 'natural',
-  temperature: '10',
-  max_people: '3',
-  kids_friendly: false,
+  temperature: '28',
+  max_people: '150',
+  kids_friendly: true,
   pets_friendly: 'false',
-  user_id: owner_test.id,
+  user_id: owner_test.id
 )
-pool_test4.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
-                  filename: 'moche.jpg')
+file = URI.open('http://blog.piscinedunord.fr/wp-content/uploads/2012/07/tropic-island-paradise.jpg')
+pool_test4.photo.attach(io: file, filename: 'tropic-island-paradise.jpg', content_type: 'image/jpg')
+
 
 pool_test5 = SwimmingPool.create!(
-  name: 'Pediluve',
-  description: 'Pour le nettoyage des sabots au retour de vos promenades',
-  address: 'Hocqueville',
-  length: '50',
-  width: '20',
-  max_depth: '3',
-  price_per_day: '200',
-  treatment: 'natural',
+  name: 'La piscine en bois Semi-enterrée',
+  description: "Le plaisir partagé en famille, au sien d'un parc floral",
+  address: 'nantes',
+  length: '10',
+  width: '5',
+  max_depth: '2',
+  price_per_day: '80',
+  treatment: 'chlore',
   temperature: '20',
   max_people: '6',
   kids_friendly: true,
   pets_friendly: 'true',
-  user_id: owner_test.id,
+  user_id: owner_test.id
 )
-pool_test5.photo.attach(io: File.open(Rails.root.join('app/assets/images/moche.jpg')),
-                  filename: 'moche.jpg')
+file = URI.open('http://piscinedunord.fr/img/constructeur-piscine-bois-hors-sol-59-62/piscine-bois-hors-sol-semi-enterree.jpg')
+pool_test5.photo.attach(io: file, filename: 'piscine-bois-hors-sol-semi-enterree.jpg', content_type: 'image/jpg')
+
+pool_test6 = SwimmingPool.create!(
+  name: 'La rivière tropicale',
+  description: "Un parcourt tropical, unique au monde avec sa riviere sauvage.
+  Un moment merveilleux à partager en famille ou pour tous vos évenements",
+  address: 'Versailles',
+  length: '150',
+  width: '5',
+  max_depth: '2',
+  price_per_day: '2000',
+  treatment: 'chlore',
+  temperature: '28',
+  max_people: '50',
+  kids_friendly: true,
+  pets_friendly: 'true',
+  user_id: owner_test.id
+)
+file = URI.open('https://www.droledemarmotte.ch/media/cache/watermark_only/uploads/images/une-piscine-de-reve.jpeg')
+pool_test6.photo.attach(io: file, filename: 'une-piscine-de-reve.jpeg', content_type: 'image/jpg')
+
+pool_test7 = SwimmingPool.create!(
+  name: 'En plein massif central',
+  description: "Vous ne serez pas déçus en découvrant cette piscine de 16,50m de long (dont 5 m dans le vide !).
+  Non seulement elle est intégrée parfaitement à son environnement, avec une vue imprenable sur le lac…
+  mais c’est également une prouesse technique",
+  address: 'Aurillac',
+  length: '16',
+  width: '5',
+  max_depth: '2',
+  price_per_day: '150',
+  treatment: 'chlore',
+  temperature: '28',
+  max_people: '10',
+  kids_friendly: false,
+  pets_friendly: 'true',
+  user_id: owner_test.id
+)
+file = URI.open('http://www.piscinespa.com/sites/default/files/styles/display1/public/piscine_de_france_exception.jpg?itok=YdCzmDoR&c=a258abdedf14c8366526be7b36ab8f93')
+pool_test7.photo.attach(io: file, filename: 'piscine_de_france_exception.jpg', content_type: 'image/jpg')
+
+pool_test8 = SwimmingPool.create!(
+  name: 'En plein foret vierge',
+  description: "Unique au Monde, la piscine à déversement en pleine foret tropicale",
+  address: 'rio de janeiro brasil',
+  length: '16',
+  width: '5',
+  max_depth: '2',
+  price_per_day: '150',
+  treatment: 'chlore',
+  temperature: '28',
+  max_people: '10',
+  kids_friendly: false,
+  pets_friendly: 'true',
+  user_id: owner_test.id
+)
+file = URI.open('http://galeriephotos.desjoyaux.fr/_data/i/upload/2018/07/17/20180717114126-54aefe29-la.jpg')
+pool_test8.photo.attach(io: file, filename: '20180717114126-54aefe29-la.jpg', content_type: 'image/jpg')
+
+pool_test9 = SwimmingPool.create!(
+  name: 'Projet X',
+  description: "A la recherche de la fiesta de votre vie? Nous avons tout prévus pour vous.
+  Venez vous oubliez dans notre paradis de la TEUFFFFFF!!!",
+  address: 'nantes',
+  length: '25',
+  width: '30',
+  max_depth: '2',
+  price_per_day: '1500',
+  treatment: 'chlore',
+  temperature: '28',
+  max_people: '150',
+  kids_friendly: false,
+  pets_friendly: 'true',
+  user_id: owner_test.id
+)
+file = URI.open('https://medias.spotern.com/spots/w640/66/66473-1532336916.jpg')
+pool_test9.photo.attach(io: file, filename: '66473-1532336916.jpg', content_type: 'image/jpg')
+
 
 puts 'create bookings'
 
