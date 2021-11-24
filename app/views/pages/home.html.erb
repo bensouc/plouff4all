@@ -6,8 +6,8 @@
   </div>
 </div>
 <div class="separator">
-  <div class="choose">Choose your univers</div>
-  <p>Logoden biniou degemer mat an penn ar bed start ha hantereur tremen c'heuz geot armel itron lerenn kazh stagañ setu toullañ pemzek bier yaouank marteze romant, er abred eizhvet gwiskamant gounez</p>
+  <div class="choose">Feel the Ploof that fit to you !</div>
+  <p>Because all days are not the same, we let you choose your today Ploof </p>
     <%# <div class="card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
@@ -17,39 +17,57 @@
   </div>
 </div>
 
-
-<div class="cardsholder">
-  <div class="container">
-    <div class="cards">
-      <div class="card-product">
-        <img src="https://cache.marieclaire.fr/data/photo/w1280_c17/5q/petite-piscine-pas-chere-ubbink.webp" />
-          <div class="card-product-infos">
-            <h2>Budget special</h2>
-            <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
-          </div>
-      </div>
-
-      <div class="card-product">
-        <img src="https://images.squarespace-cdn.com/content/v1/57b5df31414fb5af39b6647b/1472049184617-4JQLQBDTVJAO8WNY8X7Q/photographe-famille-lifestyle.jpg" />
-          <div class="card-product-infos">
-            <h2>Child friendly</h2>
-            <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
-          </div>
-      </div>
-
-      <div class="card-product">
-        <img src="https://www.piscine-clic.com/news/wp-content/uploads/2014/01/1a.jpg" />
-          <div class="card-product-infos">
-            <h2>Pets friendly</h2>
-            <%# <p>Product description with <strong>relevant info</strong> only.</p> %>
-          </div>
-      </div>
+  <div class="univers_conteneurs">
+    <div class="image_holder">
+      <img id="image_univers" src="https://cache.marieclaire.fr/data/photo/w1280_c17/5q/petite-piscine-pas-chere-ubbink.webp" alt="">
+    </div>
+    <div class="text_holder">
+      <h1><i class="far fa-smile-wink"></i> Budget special</h1>
+      <!-- <img class="icone_univers" src="https://img.icons8.com/ios/100/000000/budget.png" /> -->
+      <p>Because at Ploof we think about all budgets, you can choose a swimming pool
+        according to your will and budget...
+        And remember, you're awesome ! ;)
+      </p>
     </div>
   </div>
-</div>
+  <div class="univers_conteneurs">
+    <div class="text_holder">
+      <h1><i class="fas fa-child"></i> Child friendly</h1>
+      <!-- <img class="icone_univers" src="https://img.icons8.com/ios/100/000000/budget.png" /> -->
+      <p>As we are not all living in a cellphone add, we DO at Ploof would let you bring
+        your adorable kids to your Ploof, bring the swim buoy we bring you the FUN :D
+      </p>
+    </div>
+    <div class="image_holder">
+      <img id="image_univers"
+        src="https://images.squarespace-cdn.com/content/v1/57b5df31414fb5af39b6647b/1472049184617-4JQLQBDTVJAO8WNY8X7Q/photographe-famille-lifestyle.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="univers_conteneurs">
+    <div class="image_holder">
+      <img id="image_univers"
+        src="https://www.piscine-clic.com/news/wp-content/uploads/2014/01/1a.jpg" alt="">
+    </div>
+    <div class="text_holder">
+      <h1><i class="fas fa-dog"></i> Pets friendly</h1>
+      <!-- <img class="icone_univers" src="https://img.icons8.com/ios/100/000000/budget.png" /> -->
+      <p>Our best fiends could be an issue, but not all think this way !
+        if you don't expect to bring an elephant, we think you can find
+        a swimming pool that fit your doggy !
+      </p>
+    </div>
+  </div>
+
+<!-- SOURCES DES IMAGES
+        <img src="https://cache.marieclaire.fr/data/photo/w1280_c17/5q/petite-piscine-pas-chere-ubbink.webp" />
+        <img src="https://images.squarespace-cdn.com/content/v1/57b5df31414fb5af39b6647b/1472049184617-4JQLQBDTVJAO8WNY8X7Q/photographe-famille-lifestyle.jpg" />
+        <img src="https://www.piscine-clic.com/news/wp-content/uploads/2014/01/1a.jpg" />
+        -->
+
 <div class="separator2">
   <div class="choose">Our top rated Ploof's</div>
-  <p>Logoden biniou degemer mat an penn ar bed start ha hantereur tremen c'heuz </p>
+  <p>Some of our top rated Ploof around the globe !!</p>
   </div>
 </div>
 
@@ -57,16 +75,18 @@
 
 <div class="top-rated-box">
   <% @swimming_pools.each do |pool| %>
+    <%= link_to swimming_pool_path(pool) do %>
     <div class="item">
       <div class="photo"> <%= cl_image_tag pool.photo.key, :height=>100%></div>
       <div class="content-home-swimming">
         <p class="location"> <%= pool.address.capitalize %></p>
         <h2><%= pool.name %></h2>
         <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-        <h4> Price: <%= pool.price_per_day %>$/day </h4>
+        <h4> <%= pool.price_per_day %>$/day </h4>
         <h4 class="rating">5.0 ★</h4>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
 <%# <i class="fas fa-tags"></i> %>
