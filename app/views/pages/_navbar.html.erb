@@ -13,9 +13,13 @@
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
+      <%if user_signed_in?%>
       <li class="nav-item">
         <%= link_to "Becoming Host", "#", class: "nav-link" %>
+        <!-- <%# <p>Hello <%= current_user.first_name</p> %>  a revoir apres la gestion de susers-->
       </li>
+      <%end%>
+
       <%if user_signed_in?%>
         <li class="nav-item dropdown">
           <%= image_tag "user_icone.png", class: "avatar avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -23,6 +27,7 @@
             <%= link_to "Go to your Dashboard", "#", class: "dropdown-item" %>
             <%= link_to "Add a Swimming Pool", "#", class: "dropdown-item" %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
           </div>
         </li>
       <%else%>
@@ -31,7 +36,7 @@
           <i class="fas fa-swimmer"></i>
           <%end%>
         </li>
-      <%end%%>
+      <%end%>
     </ul>
   </div>
 </div>
