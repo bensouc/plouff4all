@@ -1,23 +1,26 @@
 .description-show-swimming {
   display: flex;
+  background-color: white;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
   margin-top: 5rem;
+  margin-bottom: 5rem;
+  border-radius: 10px;
   .item {
     min-height: 340px;
   }
   .feature-swimming {
-    background-color: aliceblue;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
     width: 500px;
+    height: 375px;
     padding: 50px 50px;
-    border-radius: 10px;
+    // border-radius: 10px;
   }
   img {
     width: 500px;
-    min-height: 357px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
+    min-height: 375px;
+
+    border-radius: 10px  0 0 10px;
   }
   li {
     color: $darkgrey;
@@ -29,9 +32,9 @@
 
 .description-swimming-pools {
   margin-top: 3rem;
-      background-color: aliceblue;
+  margin-bottom: 3rem;
+      background-color: white;
     box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
-    // width: 500px;
     padding: 50px 50px;
     border-radius: 10px;
 }

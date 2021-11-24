@@ -1,5 +1,8 @@
 
 <div class="container">
+<%= link_to swimming_pools_path, class:"btn btn-flat" do %>
+  <i class="fas fa-arrow-circle-left "></i> Go back
+<% end %>
   <h1 class="text-center"><%= @swimming_pool.name.capitalize %></h1>
   <h2 class="text-center">Proposed by <%= @swimming_pool.user.first_name.capitalize %></h2>
 
@@ -8,15 +11,15 @@
       <%= cl_image_tag  @swimming_pool.photo.key %>
     </div>
     <div class="item feature-swimming">
-      <h3>Caractéristiques</h3>
-      <ul>
+      <h3>Features</h3>
+
         <li><i class="fas fa-water"></i> <strong> <%= @swimming_pool.length %>m</strong> length</li>
         <li><i class="fas fa-water"></i> <strong><%= @swimming_pool.width %>m</strong> width</li>
         <li><i class="fas fa-swimmer"></i> <%= @swimming_pool.max_depth %>m of max depth</li>
         <li><i class="fas fa-temperature-high"></i> <%= @swimming_pool.temperature %>°C </li>
         <li><i class="fas fa-users"></i> <%= @swimming_pool.max_people %> people max per reservation</li>
         <li><i class="fas fa-location-arrow"></i> <%= @swimming_pool.address.capitalize %></li>
-      </ul>
+
     </div>
 
   </div>
