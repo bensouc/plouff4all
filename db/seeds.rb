@@ -25,7 +25,7 @@ renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_n
 
 
   puts "create swimming pools"
-pool_test = SwimmingPool.create!(
+pool_test1 = SwimmingPool.create!(
   name: 'Corléone Pistoche',
   description: 'Superbe piscine à déversement, avec vue sur la Méditerranée.
                 Un contour en bois exotique et un jardin fleuri enchantera vos moments autour de notre piscine. ',
@@ -193,6 +193,12 @@ pool_test9 = SwimmingPool.create!(
 )
 file = URI.open('https://medias.spotern.com/spots/w640/66/66473-1532336916.jpg')
 pool_test9.photo.attach(io: file, filename: '66473-1532336916.jpg', content_type: 'image/jpg')
+
+puts 'geocoded pool_test'
+pools = []
+# for i in 1..9
+#   pools << pool_test
+# end
 
 
 puts 'create bookings'
