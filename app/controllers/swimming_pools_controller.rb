@@ -4,8 +4,15 @@ class SwimmingPoolsController < ApplicationController
 
     if params[:query].present?
       @swimming_pools = SwimmingPool.where('address ILIKE ?', "%#{params[:query]}%")
-    else
-      @swimming_pools = SwimmingPool.all
+    # else
+    #   @swimming_pools = SwimmingPool.all
+    end
+
+    @markers = @swimming_pools.geocoded.map do |pool|
+      {
+        lat: pool.latitude,
+        lng: pool.longitude
+      }
     end
   end
 
