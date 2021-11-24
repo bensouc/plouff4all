@@ -12,19 +12,14 @@ User.destroy_all
 SwimmingPool.destroy_all
 Booking.destroy_all
 
-
-
-
-
 puts "creating user"
 owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Louis',last_name:  'Plouff',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
-  role: 'owner',address: 'nantes',phone_number: '0604584584')
+  role: 'owner', address: 'nantes', phone_number: '0604584584')
 
 renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'Hélène',last_name:  'Lemoine',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
-  role: 'renter',address: 'nantes',phone_number: '0604584584')
+  role: 'renter', address: 'nantes', phone_number: '0604584584')
 
-
-  puts "create swimming pools"
+puts "create swimming pools"
 pool_test1 = SwimmingPool.create!(
   name: 'Corléone Pistoche',
   description: 'Superbe piscine à déversement, avec vue sur la Méditerranée.
@@ -41,7 +36,7 @@ pool_test1 = SwimmingPool.create!(
   pets_friendly: 'false',
   user_id: owner_test.id,
 )
-pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
+pool_test1.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
                   filename: 'pool.jpg')
 
 pool_test2 = SwimmingPool.create!(
@@ -196,16 +191,21 @@ pool_test9.photo.attach(io: file, filename: '66473-1532336916.jpg', content_type
 
 puts 'geocoded pool_test'
 pools = []
-# for i in 1..9
-#   pools << pool_test
-# end
-
+address = ['Cassis, Bouches-du-Rhône', 'Nantes - 44', 'Saint-Laurent-du-Var, France',
+           'port de Nice', 'Nantes-Chantenay', 'Versailles - 78', 'Aurillac, Cantal',
+           'rio de janeiro, Brasil', 'Nantes sur Loire']
+i = 0
+pools.each do |pool|
+  pool.address = address[i]
+  puts pool.address
+  i += 1
+end
 
 puts 'create bookings'
 
 Booking.create!(
   user_id: renter_test.id,
-  swimming_pool_id: pool_test.id,
+  swimming_pool_id: pool_test1.id,
   start_date: '27/05/2021',
   end_date: '28/05/2021',
   status: 'validated',
