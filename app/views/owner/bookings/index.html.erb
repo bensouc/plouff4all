@@ -1,5 +1,22 @@
-<ul>
+
 <%@bookings.each do |booking|%>
-    <li>booking</li>
+  <%pool = SwimmingPool.find(booking.swimming_pool.id)%>
+  <%renter = User.find(booking.user_id)%>
+  <div class="card-booking">
+    <%= cl_image_tag  pool.photo.key %>
+    <div class="card-booking-infos">
+      <h2><%=pool.name%></h2>
+      From : <%=renter.email%>
+      <div class="details-info">
+        <ul>
+          <p><%=booking.total_price%> €</p>
+          <p><%=booking.status%></p>
+        </ul>
+      </div>
+      <div class=calendar>
+        <p><%=booking.start_date%></p>
+        <p><%=booking.end_date%></p>
+      </div>
+    </div>
+  </div>
 <%end%>
-</ul>
