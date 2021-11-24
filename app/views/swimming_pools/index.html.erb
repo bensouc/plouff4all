@@ -1,6 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.3)), url(https://media.architecturaldigest.com/photos/58542fb7001c874267ed3e75/master/pass/Indoor%20Swimming%20Pools%20Incredible%20Designs%203.jpg);">
+  <div class="container">
+    <h1>The largest selection of rentals you can find !</h1>
+    <div class="search-bar mt-5">
+      <form action="/swimming_pools">
+        <div class="form-group d-flex align-items-center">
+          <input type="search" class="form-control search-control" name="query" id="search" placeholder="Swimming pool located in..." method="GET">
+          <button type="submit" class="btn btn-flat search-btn"> 🐸 </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="container">
-  <h1 class="text-center margin-top">The largest selection of rentals you can find !</h1>
   <div class="box">
     <% @swimming_pools.each do |pool| %>
       <%= link_to swimming_pool_path(pool) do %>
