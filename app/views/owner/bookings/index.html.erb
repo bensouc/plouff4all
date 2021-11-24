@@ -4,19 +4,21 @@
   <%renter = User.find(booking.user_id)%>
   <div class="card-booking">
     <%= cl_image_tag  pool.photo.key %>
-    <div class="card-booking-infos">
+    <div class="card-booking-infos w-100">
       <h2><%=pool.name%></h2>
-      From : <%=renter.email%>
+      From : <%=renter.first_name%>
       <div class="details-info">
-        <ul>
-          <p><%=booking.total_price%> €</p>
-          <p><%=booking.status%></p>
-        </ul>
+        <p>Total Price : <%=booking.total_price%> €</p>
+        <p>Booking status : <%=booking.status%></p>
       </div>
       <div class=calendar>
-        <p><%=booking.start_date%></p>
-        <p><%=booking.end_date%></p>
+        <p>From : <%=booking.start_date%></p>
+        <p>To : <%=booking.end_date%></p>
       </div>
+    </div>
+    <div class='btn-booking-validation pr-3'>
+    <i class="fas fa-calendar-check text-success "></i>
+    <i class="fas fa-calendar-minus text-danger"></i>
     </div>
   </div>
 <%end%>

@@ -1,16 +1,19 @@
 .card-booking {
   overflow: hidden;
   height: 150px;
+  width: 600px;
   color: $darkgrey;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 4px;
+  margin: 4px 0px;
 }
 
 .card-booking img {
-  height: 100%;
-  width: 120px;
+  height: 150px;
+  width: 200px;
   object-fit: cover;
 }
 
@@ -30,4 +33,9 @@
 
 .card-booking .card-booking-infos {
   padding: 16px;
+  width: 100px;
+}
+
+.btn-booking-validation{
+  font-size: 20px;
 }
