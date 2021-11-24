@@ -11,7 +11,7 @@
     opacity: 0.8
   }
   .card-index-infos {
-    padding: 16px;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -31,25 +31,25 @@
 }
 
 .card-index-name {
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 0.2vh;
 }
 
 .card-index-address {
-  font-size: 10px;
+  font-size: 0.625em;
   font-weight: bold;
   margin-bottom: 2vh;
 }
 
 .card-index-pricing {
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: bold;
   margin: 0;
 }
 
 .card-index p {
-  font-size: 12px;
+  font-size: 0.75em;
   opacity: .7;
   margin: 0;
 }
