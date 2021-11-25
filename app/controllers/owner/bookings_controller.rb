@@ -1,6 +1,8 @@
 class Owner::BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings_as_owner
+    @pools = current_user.swimming_pools
+    @my_bookings = current_user.bookings_as_renter
   end
   def accept
     @booking = Booking.find(params[:id])

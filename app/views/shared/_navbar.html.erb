@@ -14,10 +14,10 @@
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <%if user_signed_in?%>
-      <li class="nav-item">
+      <%# <li class="nav-item">
         <%= link_to "Becoming Host", "#", class: "nav-link" %>
         <!-- <%# <p>Hello <%= current_user.first_name</p> %>  a revoir apres la gestion de susers-->
-      </li>
+      <%# </li> %>
       <%end%>
 
       <%if user_signed_in?%>

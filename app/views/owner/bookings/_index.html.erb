@@ -1,3 +1,4 @@
+<%= render "/owner/bookings/my_bookings"%>
 <%if current_user.role == 'owner'%>
   <div class="tabs-to-dropdown">
     <div class="nav-wrapper d-flex align-items-center justify-content-between">
@@ -30,7 +31,7 @@
       </div>
       <div class="tab-pane fade" id="pills-news" role="tabpanel" >
         <div class="container-fluid">
-
+          <%= render "/owner/bookings/index_closed"%>
         </div>
       </div>
       <div class="tab-pane fade" id="pills-contact" role="tabpanel" >
