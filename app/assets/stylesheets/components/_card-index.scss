@@ -1,16 +1,38 @@
 
 
-.box {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
-  gap: 25px;
-  flex-shrink: 1;
-  // background-color: $light-gray;
+// .cards-box {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   flex-flow: row wrap;
+//   gap: 25px;
+//   flex-shrink: 1;
+//   // background-color: $light-gray;
+//   :hover {
+  //     text-decoration: none;
+  //   }
+  // }
+
+.cards-box {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // gap: 20px;
   :hover {
     text-decoration: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards-box {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    // gap: 20px;
+    :hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -19,16 +41,16 @@
   background: white;
   color: $darkgrey;
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
-  width: 18vw;
+  width: 25vw;
   height: 245px;
-  max-height: 300px;
   margin-top: 5vh;
+  margin-left: 5vh;
   border-radius: 4px;
   :hover {
     opacity: 0.8
   }
   .card-index-infos {
-    padding: 16px;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -48,26 +70,21 @@
 }
 
 .card-index-name {
-  font-size: 16px;
+  font-size: 0.75em;
   font-weight: bold;
   margin-bottom: 0.2vh;
 }
 
 .card-index-address {
-  font-size: 10px;
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 2vh;
+  opacity: .7;
 }
 
 .card-index-pricing {
-  font-size: 12px;
+  font-size: 1em;
   font-weight: bold;
-  margin: 0;
-}
-
-.card-index p {
-  font-size: 12px;
-  opacity: .7;
   margin: 0;
 }
 

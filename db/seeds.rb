@@ -12,24 +12,31 @@ User.destroy_all
 SwimmingPool.destroy_all
 Booking.destroy_all
 
-
-
-
-
 puts "creating user"
-owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Louis',last_name:  'Plouff',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+
+owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Laurent', last_name:  'Plouff', birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'owner',address: 'nantes',phone_number: '0604584584')
 
+
+  file = URI.open('https://res.cloudinary.com/bensoucdev/image/upload/v1637829103/maclead_ndqreh.jpg')
+owner_test.photo.attach(io: file, filename: 'maclead_ndqreh.jpg', content_type: 'image/jpg')
+
+owner_test2 = User.create!(email: 'bensouc@gmail.com', password: 'secret', first_name: 'Ben',last_name:  'Souc',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+  role: 'owner',address: '47 rue des freres amieux nantes',phone_number: '0604584584')
+
+file = URI.open('https://res.cloudinary.com/bensoucdev/image/upload/v1637794731/ID_BMO_vrefar.jpg')
+owner_test2.photo.attach(io: file, filename: 'ID_BMO_vrefar.jpg', content_type: 'image/jpg')
+
+
 renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'Hélène',last_name:  'Lemoine',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
-  role: 'renter',address: 'nantes',phone_number: '0604584584')
+  role: 'renter', address: 'nantes', phone_number: '0604584584')
 
-
-  puts "create swimming pools"
-pool_test = SwimmingPool.create!(
+puts "create swimming pools"
+pool_test1 = SwimmingPool.create!(
   name: 'Corléone Pistoche',
   description: 'Superbe piscine à déversement, avec vue sur la Méditerranée.
                 Un contour en bois exotique et un jardin fleuri enchantera vos moments autour de notre piscine. ',
-  address: 'Cassis',
+  address: "1170-1196 Av. du Revestel, 13260 Cassis, france",
   length: '20',
   width: '12',
   max_depth: '2',
@@ -41,14 +48,14 @@ pool_test = SwimmingPool.create!(
   pets_friendly: 'false',
   user_id: owner_test.id,
 )
-pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
+pool_test1.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
                   filename: 'pool.jpg')
 
 pool_test2 = SwimmingPool.create!(
   name: 'Une très belle piscine',
   description: 'Piscine rectangulaire 8x4m, chauffée.
  Pour partager des moments inoubliables entre amis ou en famille. Animaux non admis',
-  address: 'nantes',
+  address: "94-102 Bd de l'Égalité, 44100 Nantes, france",
   length: '8',
   width: '4',
   max_depth: '2',
@@ -66,7 +73,7 @@ pool_test2.photo.attach(io: file, filename: '20150629105203-05465bf1-la.jpg', co
 pool_test3 = SwimmingPool.create!(
   name: 'Avec vue sur mer',
   description: 'La plus belle des piscines au sein de notre propriété. Découvrez les éléments qui feront de ce moment, une expérience unique pas comme les autres, avec une piscine de luxe',
-  address: 'Saint-Laurent-du-Var, France',
+  address: '47-43 Chem. des Mauberts, 06800 Cagnes-sur-Mer, france',
   length: '20',
   width: '12',
   max_depth: '2',
@@ -84,7 +91,7 @@ pool_test3.photo.attach(io: file, filename: '2251-16186421.jpg', content_type: '
 pool_test4 = SwimmingPool.create!(
   name: 'Tropical Island Paradise',
   description: "Combinez une expérience de naviagation et privatiser notre piscine de luxe",
-  address: 'port de nice',
+  address: 'Rue Milton Robbins, 06300 Nice, france',
   length: '25',
   width: '20',
   max_depth: '5',
@@ -103,7 +110,7 @@ pool_test4.photo.attach(io: file, filename: 'tropic-island-paradise.jpg', conten
 pool_test5 = SwimmingPool.create!(
   name: 'La piscine en bois Semi-enterrée',
   description: "Le plaisir partagé en famille, au sien d'un parc floral",
-  address: 'nantes',
+  address: '21 Rue de la Ruette, 44300 Nantes, france',
   length: '10',
   width: '5',
   max_depth: '2',
@@ -122,7 +129,7 @@ pool_test6 = SwimmingPool.create!(
   name: 'La rivière tropicale',
   description: "Un parcourt tropical, unique au monde avec sa riviere sauvage.
   Un moment merveilleux à partager en famille ou pour tous vos évenements",
-  address: 'Versailles',
+  address: '1-7 Imp. de Toulouse, 78000 Versailles, france',
   length: '150',
   width: '5',
   max_depth: '2',
@@ -132,7 +139,7 @@ pool_test6 = SwimmingPool.create!(
   max_people: '50',
   kids_friendly: true,
   pets_friendly: 'true',
-  user_id: owner_test.id
+  user_id: owner_test2.id
 )
 file = URI.open('https://www.droledemarmotte.ch/media/cache/watermark_only/uploads/images/une-piscine-de-reve.jpeg')
 pool_test6.photo.attach(io: file, filename: 'une-piscine-de-reve.jpeg', content_type: 'image/jpg')
@@ -142,7 +149,7 @@ pool_test7 = SwimmingPool.create!(
   description: "Vous ne serez pas déçus en découvrant cette piscine de 16,50m de long (dont 5 m dans le vide !).
   Non seulement elle est intégrée parfaitement à son environnement, avec une vue imprenable sur le lac…
   mais c’est également une prouesse technique",
-  address: 'Aurillac',
+  address: 'Lamartinie, 15130 Ytrac, france',
   length: '16',
   width: '5',
   max_depth: '2',
@@ -160,7 +167,7 @@ pool_test7.photo.attach(io: file, filename: 'piscine_de_france_exception.jpg', c
 pool_test8 = SwimmingPool.create!(
   name: 'En plein foret vierge',
   description: "Unique au Monde, la piscine à déversement en pleine foret tropicale",
-  address: 'rio de janeiro brasil',
+  address: 'Av. Delfim Moreira, 816 - Leblon, Rio de Janeiro - RJ, 22441-000, Brésil',
   length: '16',
   width: '5',
   max_depth: '2',
@@ -179,7 +186,7 @@ pool_test9 = SwimmingPool.create!(
   name: 'Projet X',
   description: "A la recherche de la fiesta de votre vie? Nous avons tout prévus pour vous.
   Venez vous oubliez dans notre paradis de la TEUFFFFFF!!!",
-  address: 'nantes',
+  address: '47 rue des freres amieux, nantes, france',
   length: '25',
   width: '30',
   max_depth: '2',
@@ -189,17 +196,27 @@ pool_test9 = SwimmingPool.create!(
   max_people: '150',
   kids_friendly: false,
   pets_friendly: 'true',
-  user_id: owner_test.id
+  user_id: owner_test2.id
 )
 file = URI.open('https://medias.spotern.com/spots/w640/66/66473-1532336916.jpg')
 pool_test9.photo.attach(io: file, filename: '66473-1532336916.jpg', content_type: 'image/jpg')
 
+puts 'geocoded pool_test'
+pools = [pool_test1, pool_test2, pool_test3, pool_test4, pool_test5, pool_test6, pool_test7, pool_test8, pool_test9]
+address = ['Cassis, Bouches-du-Rhône', 'Nantes - 44', 'Saint-Laurent-du-Var, France',
+           'port de Nice', 'Nantes-Chantenay', 'Versailles - 78', 'Aurillac, Cantal',
+           'rio de janeiro, Brasil', 'Nantes sur Loire']
+
+for i in 0..8
+  pools[i].address = address[i]
+  puts pools[i].address
+end
 
 puts 'create bookings'
 
 Booking.create!(
   user_id: renter_test.id,
-  swimming_pool_id: pool_test.id,
+  swimming_pool_id: pool_test1.id,
   start_date: '27/05/2021',
   end_date: '28/05/2021',
   status: 'validated',
@@ -212,5 +229,23 @@ Booking.create!(
   start_date: '27/05/2021',
   end_date: '28/05/2021',
   status: 'pending',
+  total_price: ' 251'
+)
+
+Booking.create!(
+  user_id: renter_test.id,
+  swimming_pool_id: pool_test3.id,
+  start_date: '27/05/2021',
+  end_date: '28/05/2021',
+  status: 'closed',
+  total_price: ' 251'
+)
+
+Booking.create!(
+  user_id: renter_test.id,
+  swimming_pool_id: pool_test5.id,
+  start_date: '27/05/2021',
+  end_date: '28/05/2021',
+  status: 'refused',
   total_price: ' 251'
 )
