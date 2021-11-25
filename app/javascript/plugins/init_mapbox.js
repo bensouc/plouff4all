@@ -11,8 +11,10 @@ const buildMap = (mapElement) => {              // initialisation de la map
 
 const addMarkersToMap = (map, markers) => {     // ajout des marqueurs sur la map
   markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.info_marker);
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
       .addTo(map);
   });
 };
