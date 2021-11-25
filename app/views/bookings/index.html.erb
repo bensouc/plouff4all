@@ -3,9 +3,9 @@
       <div class="card-booking">
         <%# <%= cl_image_tag  booking.photo.key %>
         <div class="card-booking-infos w-100">
-          <div class="sp_picture"> <%= booking.swimming_pool.photo %> </div>
+          <%# <div class="sp_picture"> <%= booking.swimming_pool.photo </div> %>
           <div class="details-info">
-            <p>Total Price : <%=booking.total_price%> €</p>
+            <p>Total Price : <%= booking.total_price %> €</p>
           </div>
           <div class=calendar>
             <p>From : <%=booking.start_date%></p>

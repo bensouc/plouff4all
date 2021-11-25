@@ -86,3 +86,9 @@ color: $blue;
 margin-top: 2rem;
 font-size: 30px;
 }
+
+.price_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
