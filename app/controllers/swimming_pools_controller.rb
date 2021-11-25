@@ -1,4 +1,5 @@
 class SwimmingPoolsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @swimming_pools = SwimmingPool.all
 

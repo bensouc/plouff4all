@@ -17,14 +17,14 @@
       <li class="nav-item">
         <%= link_to "Becoming Host", new_swimming_pool_path, class: "nav-link" %>
         <!-- <%# <p>Hello <%= current_user.first_name</p> %>  a revoir apres la gestion de susers-->
-      </li>
+      <%# </li> %>
       <%end%>
 
       <%if user_signed_in?%>
         <li class="nav-item dropdown">
           <%= image_tag "user_icone.png", class: "avatar avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My SwimminPools", "/dashboard", class: "dropdown-item"%>
+            <%= link_to "My SwimminPools", owner_bookings_path, class: "dropdown-item"%>
             <%= link_to "Add a Swimming Pool", "#", class: "dropdown-item"if current_user.role == 'owner'  %>
             <%= link_to "Edit your profil", "#", class: "dropdown-item" %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -1,2 +1,21 @@
-<% my_bookings = current_user.bookings_as_renter %>
-my_bookings
+<h2>Your Bookings</h2>
+<div class="container">
+  <div class='d-flex flex-wrap'>
+    <%@my_bookings.each do |booking|%>
+      <div class="card-my-bookings m-2" ">
+        <%= cl_image_tag  booking.swimming_pool.photo.key %>
+        <div class="card-my-bookings-infos w-100">
+          <h2><%=booking.swimming_pool.name%></h2>
+          <div class="details-info">
+            <p>Total Price : <strong><%=booking.total_price%> €</strong></p>
+          </div>
+          <div class=calendar>
+            <p>From : <%=booking.start_date%></p>
+            <p>To : <%=booking.end_date%></p>
+          </div>
+          <p>Status: <%= booking.status  %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
