@@ -1,38 +1,18 @@
 
 <div class="container">
-<%= link_to swimming_pools_path, class:"btn btn-flat" do %>
-  <i class="fas fa-arrow-circle-left "></i> Go back
-<% end %>
-  <h1 class="text-center"><%= @swimming_pool.name.capitalize %></h1>
-  <h2 class="text-center">Proposed by <%= @swimming_pool.user.first_name.capitalize %></h2>
-
-  <div class="description-show-swimming">
-    <div class="item photo-show-swimming">
-      <%= cl_image_tag  @swimming_pool.photo.key %>
-    </div>
-    <div class="item feature-swimming">
-      <h3>Features</h3>
-
-        <li><i class="fas fa-water"></i> <strong> <%= @swimming_pool.length %>m</strong> length</li>
-        <li><i class="fas fa-water"></i> <strong><%= @swimming_pool.width %>m</strong> width</li>
-        <li><i class="fas fa-swimmer"></i> <%= @swimming_pool.max_depth %>m of max depth</li>
-        <li><i class="fas fa-temperature-high"></i> <%= @swimming_pool.temperature %>°C </li>
-        <li><i class="fas fa-users"></i> <%= @swimming_pool.max_people %> people max per reservation</li>
-        <li><i class="fas fa-location-arrow"></i> <%= @swimming_pool.address.capitalize %></li>
+  <%= link_to swimming_pools_path, class:"btn btn-flat" do %>
+    <i class="fas fa-arrow-circle-left "></i> Back
+  <% end %>
 
 
-    </div>
-
+  <div class="item photo-show-swimming position-relative"
+      style='background:linear-gradient(rgba(0, 0, 0, 0.1),  80%, rgba(0, 0, 0, 0.8)), url("<%= cl_image_path  @swimming_pool.photo.key %>")'>
+    <h1 class="text-center p-2"><%= @swimming_pool.name.capitalize %></h1>
   </div>
 
-  <div class= "text-center description-swimming-pools">
-    <h2 class="text-center">Description</h2>
-    <p class="text-center"><%= @swimming_pool.description %></p>
-     <div class="price-tag-show">
-      <span><%= @swimming_pool.price_per_day %> €/day</span>
-    </div>
-
-  </div>
+  <div class="item price">
+    <h3><%= @swimming_pool.price_per_day %>€/day</h3>
+</div>
 
   <div class="text-center">
      <%= link_to "I want to swmin in it ! Let's book", "", class: "btn btn-gradient text-center"  %>
@@ -40,21 +20,21 @@
 
 
 
-<h2 class="text-center mt-4">Our customers also recommande...</h2>
-<div class="top-rated-box recommandation">
+  <h2 class="text-center mt-4">Our customers also recommend...</h2>
+  <div class="top-rated-box recommandation">
 
-  <% @swimming_pools.each do |pool| %>
-    <div class="item">
-      <%= cl_image_tag pool.photo.key %>
-      <div class="content-home-swimming">
-        <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
-        <h2><%= pool.name %></h2>
-        <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-        <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
-        <h4 class="rating">5.0 ★</h4>
+    <% @swimming_pools.each do |pool| %>
+      <div class="item">
+        <%= cl_image_tag pool.photo.key %>
+        <div class="content-home-swimming">
+          <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+          <h2><%= pool.name %></h2>
+          <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
+          <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
+          <h4 class="rating">5.0 ★</h4>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
 </div>
