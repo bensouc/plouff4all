@@ -25,7 +25,7 @@ class SwimmingPoolsController < ApplicationController
         lat: pool.latitude,
         lng: pool.longitude,
         info_marker: render_to_string(partial: "info_marker", locals: { pool: pool }),
-        image_url: helpers.asset_url('<%= cl_image_tag pool.photo.key %>')
+        # image_url: helpers.asset_url('<%= cl_image_tag pool.photo.key %>')
       }
     end
   end
