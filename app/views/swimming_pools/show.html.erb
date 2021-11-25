@@ -1,4 +1,3 @@
-
 <div class="container">
 <%= link_to swimming_pools_path, class:"btn btn-flat" do %>
   <i class="fas fa-arrow-circle-left "></i> Go back
@@ -6,6 +5,11 @@
   <h1 class="text-center"><%= @swimming_pool.name.capitalize %></h1>
   <h2 class="text-center">Proposed by <%= @swimming_pool.user.first_name.capitalize %></h2>
 
+<%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <%= f.submit "coucou" %>
+<% end %>
   <div class="description-show-swimming">
     <div class="item photo-show-swimming">
       <%= cl_image_tag  @swimming_pool.photo.key %>
