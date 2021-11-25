@@ -1,0 +1,32 @@
+<%bookings = current_user.bookings_as_owner%>
+
+<%if bookings.where('status' == 'closed')  %>
+
+<% else %>
+  <%bookings.each do |booking|%>
+    <% if booking.status == 'closed' %>
+      <%pool = SwimmingPool.find(booking.swimming_pool.id)%>
+      <%renter = User.find(booking.user_id)%>
+      <div class="card-booking">
+        <%= cl_image_tag  pool.photo.key class:'img' %>
+        <div class="card-booking-infos w-100">
+          <h2><%=pool.name%></h2>
+          From : <%=renter.first_name%>
+          <div class="details-info">
+            <p>Total Price : <%=booking.total_price%> €</p>
+          </div>
+          <div class=calendar>
+            <p>From : <%=booking.start_date%></p>
+            <p>To : <%=booking.end_date%></p>
+          </div>
+        </div>
+        <div class='btn-booking-validation pr-3'>
+        <%if booking.status == "pending"%>
+        <i class="fas fa-calendar-check text-success "></i>
+        <i class="fas fa-calendar-minus text-danger"></i>
+        <%end%>
+        </div>
+      </div>
+    <% end %>
+  <%end%>
+<%end%>
