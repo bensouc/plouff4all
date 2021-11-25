@@ -5,8 +5,29 @@ class SwimmingPoolsController < ApplicationController
 
     if params[:query].present?
       @swimming_pools = SwimmingPool.where('address ILIKE ?', "%#{params[:query]}%")
-    else
-      @swimming_pools = SwimmingPool.all
+    # else
+    #   @swimming_pools = SwimmingPool.all
+    end
+
+    @markers = geo_marked(@swimming_pools)
+    # @markers = @swimming_pools.geocoded.map do |pool|
+    #   {
+    #     lat: pool.latitude,
+    #     lng: pool.longitude,
+    #     info_marker: render_to_string(partial: "info_marker", locals: { pool: pool }),
+    #     image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+    #   }
+    # end
+  end
+
+  def geo_marked(swimming_pools)
+    swimming_pools.geocoded.map do |pool|
+      {
+        lat: pool.latitude,
+        lng: pool.longitude,
+        info_marker: render_to_string(partial: "info_marker", locals: { pool: pool }),
+        # image_url: helpers.asset_url('<%= cl_image_tag pool.photo.key %>')
+      }
     end
   end
 

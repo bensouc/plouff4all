@@ -12,13 +12,11 @@ User.destroy_all
 SwimmingPool.destroy_all
 Booking.destroy_all
 
-
-
-
-
 puts "creating user"
+
 owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Laurent', last_name:  'Plouff', birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'owner',address: 'nantes',phone_number: '0604584584')
+
 
   file = URI.open('https://res.cloudinary.com/bensoucdev/image/upload/v1637829103/maclead_ndqreh.jpg')
 owner_test.photo.attach(io: file, filename: 'maclead_ndqreh.jpg', content_type: 'image/jpg')
@@ -31,11 +29,10 @@ owner_test2.photo.attach(io: file, filename: 'ID_BMO_vrefar.jpg', content_type: 
 
 
 renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'Hélène',last_name:  'Lemoine',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
-  role: 'renter',address: 'nantes',phone_number: '0604584584')
+  role: 'renter', address: 'nantes', phone_number: '0604584584')
 
-
-  puts "create swimming pools"
-pool_test = SwimmingPool.create!(
+puts "create swimming pools"
+pool_test1 = SwimmingPool.create!(
   name: 'Corléone Pistoche',
   description: 'Superbe piscine à déversement, avec vue sur la Méditerranée.
                 Un contour en bois exotique et un jardin fleuri enchantera vos moments autour de notre piscine. ',
@@ -51,7 +48,7 @@ pool_test = SwimmingPool.create!(
   pets_friendly: 'false',
   user_id: owner_test.id,
 )
-pool_test.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
+pool_test1.photo.attach(io: File.open(Rails.root.join('app/assets/images/pool.jpg')),
                   filename: 'pool.jpg')
 
 pool_test2 = SwimmingPool.create!(
@@ -204,12 +201,22 @@ pool_test9 = SwimmingPool.create!(
 file = URI.open('https://medias.spotern.com/spots/w640/66/66473-1532336916.jpg')
 pool_test9.photo.attach(io: file, filename: '66473-1532336916.jpg', content_type: 'image/jpg')
 
+puts 'geocoded pool_test'
+pools = [pool_test1, pool_test2, pool_test3, pool_test4, pool_test5, pool_test6, pool_test7, pool_test8, pool_test9]
+address = ['Cassis, Bouches-du-Rhône', 'Nantes - 44', 'Saint-Laurent-du-Var, France',
+           'port de Nice', 'Nantes-Chantenay', 'Versailles - 78', 'Aurillac, Cantal',
+           'rio de janeiro, Brasil', 'Nantes sur Loire']
+
+for i in 0..8
+  pools[i].address = address[i]
+  puts pools[i].address
+end
 
 puts 'create bookings'
 
 Booking.create!(
   user_id: renter_test.id,
-  swimming_pool_id: pool_test.id,
+  swimming_pool_id: pool_test1.id,
   start_date: '27/05/2021',
   end_date: '28/05/2021',
   status: 'validated',
