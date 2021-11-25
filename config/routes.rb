@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :bookings, only: [:new, :create]
+  resources :bookings, only: [:new, :create, :index]
 
   get '/dashboard', to: "pages#dashboard"
 end

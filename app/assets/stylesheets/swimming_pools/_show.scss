@@ -19,7 +19,6 @@
   img {
     width: 500px;
     min-height: 375px;
-
     border-radius: 10px  0 0 10px;
   }
   li {
@@ -41,4 +40,17 @@
 
 .recommandation {
   margin-top: 3rem;
+}
+
+
+.price-tag-show {
+  border: 1px solid blue;
+  padding: 10px 15px;
+  width: 106px;
+  background: blue;
+  margin-right: auto;
+  margin-left: auto;
+  span {
+    color: white;
+  }
 }
