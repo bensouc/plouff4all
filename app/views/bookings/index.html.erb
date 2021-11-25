@@ -1,6 +1,5 @@
-<% bookings = current_user.bookings_as_renter%>
 <div class='p-3'>
-  <%bookings.each do |booking|%>
+  <%@bookings.each do |booking|%>
       <%pool = SwimmingPool.find(booking.swimming_pool.id)%>
       <%renter = User.find(booking.user_id)%>
       <div class="card-booking">

@@ -1,4 +1,5 @@
 class SwimmingPoolsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @swimming_pools = SwimmingPool.all
 
@@ -13,5 +14,9 @@ class SwimmingPoolsController < ApplicationController
     @swimming_pool = SwimmingPool.find(params[:id])
     @new_booking = Booking.new
     @swimming_pools = SwimmingPool.all.sample(4)
+  end
+
+  def edit
+    @pool = SwimmingPool.find(params[:id])
   end
 end

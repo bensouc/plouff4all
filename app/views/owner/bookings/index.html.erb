@@ -2,7 +2,8 @@
 <h1><%= current_user.first_name.capitalize%>'s Dashboard</h1>
 </div>
 
-<%= render "bookings/index"%>
+
+
 
 <%if current_user.role == 'owner'%>
   <div>
