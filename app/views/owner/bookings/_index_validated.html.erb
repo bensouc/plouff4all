@@ -5,7 +5,7 @@
     <%pool = SwimmingPool.find(booking.swimming_pool.id)%>
     <%renter = User.find(booking.user_id)%>
     <div class="card-booking">
-      <%= cl_image_tag  pool.photo.key %>
+      <%= cl_image_tag  pool.photo.key, class:'img' %>
       <div class="card-booking-infos w-100">
         <h2><%=pool.name%></h2>
         From : <%=renter.first_name%>

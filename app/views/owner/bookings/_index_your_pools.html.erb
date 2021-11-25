@@ -1,19 +1,19 @@
 <%pools = current_user.swimming_pools%>
 <%pools.each do |pool|%>
-  <%# <%pool = SwimmingPool.find(booking.swimming_pool.id)%>
-    <%# <%renter = User.find(booking.user_id)%>
     <div class="card-booking">
-      <%= cl_image_tag  pool.photo.key %>
-      <div class="card-booking-infos w-100">
-        <h2><%=pool.name%></h2>
-        <div class="details-info">
-          <p>Actual Price : <%=pool.price_per_day%> €/day</p>
-
+      <%= cl_image_tag  pool.photo.key, class:'img' %>
+      <div class="card-booking-infos w-100 flex-column">
+        <div class='p-2 text-start'>
+          <strong><%=pool.name%></strong>
+          <i class="fas fa-swimming-pool text-danger"></i>
+        </div>
+        <div class="p-2 text-start">
+        Actual Price : <strong><%=pool.price_per_day%> €/day</strong>
         </div>
       </div>
       <div class='btn-booking-validation pr-3'>
         <%= link_to 'Edit', edit_owner_swimming_pool_path(pool.id),
-          class:'btn btn-primary btn-sm m-3'%>
+          class:'btn btn-primary  m-3'%>
       </div>
     </div>
 <%end%>
