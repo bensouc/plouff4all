@@ -17,8 +17,11 @@ Booking.destroy_all
 
 
 puts "creating user"
-owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Louis',last_name:  'Plouff',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Laurent', last_name:  'Plouff', birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'owner',address: 'nantes',phone_number: '0604584584')
+
+  file = URI.open('https://res.cloudinary.com/bensoucdev/image/upload/v1637829103/maclead_ndqreh.jpg')
+owner_test.photo.attach(io: file, filename: 'maclead_ndqreh.jpg', content_type: 'image/jpg')
 
 owner_test2 = User.create!(email: 'bensouc@gmail.com', password: 'secret', first_name: 'Ben',last_name:  'Souc',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'owner',address: '47 rue des freres amieux nantes',phone_number: '0604584584')
