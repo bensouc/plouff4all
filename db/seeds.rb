@@ -36,7 +36,7 @@ pool_test1 = SwimmingPool.create!(
   name: 'Corléone Pistoche',
   description: 'Superbe piscine à déversement, avec vue sur la Méditerranée.
                 Un contour en bois exotique et un jardin fleuri enchantera vos moments autour de notre piscine. ',
-  address: '1170-1196 Av. du Revestel, 13260 Cassis, france',
+  address: "1170-1196 Av. du Revestel, 13260 Cassis, france",
   length: '20',
   width: '12',
   max_depth: '2',

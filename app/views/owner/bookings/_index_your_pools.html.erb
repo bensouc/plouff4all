@@ -1,5 +1,4 @@
-<%pools = current_user.swimming_pools%>
-<%pools.each do |pool|%>
+<%@pools.each do |pool|%>
     <div class="card-booking">
       <%= cl_image_tag  pool.photo.key, class:'img' %>
       <div class="card-booking-infos w-100 flex-column">
