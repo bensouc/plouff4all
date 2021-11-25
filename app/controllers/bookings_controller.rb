@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.all
+  end
   def new
     @new_booking = Booking.new
     @swimming_pool = SwimmingPool.find(params[:swimming_pool_id])
@@ -10,8 +13,9 @@ class BookingsController < ApplicationController
       @new_booking.status = "pending"
       @new_booking.user = current_user
       @new_booking.swimming_pool = SwimmingPool.find(params[:swimming_pool_id])
+      @swimming_pool = SwimmingPool.find(params[:swimming_pool_id])
       @new_booking.save
-      redirect_to dashboard_path
+      redirect_to bookings_path
       # @swimming_pool = SwimmingPool.find(params[:swimming_pool_id])
     #else
       #path vers login

@@ -1,0 +1,21 @@
+<div class='p-3'>
+  <%@bookings.each do |booking|%>
+      <div class="card-booking">
+        <%# <%= cl_image_tag  booking.photo.key %>
+        <div class="card-booking-infos w-100">
+          <div class="sp_picture"> <%= booking.swimming_pool.photo %> </div>
+          <div class="details-info">
+            <p>Total Price : <%=booking.total_price%> €</p>
+          </div>
+          <div class=calendar>
+            <p>From : <%=booking.start_date%></p>
+            <p>To : <%=booking.end_date%></p>
+          </div>
+        </div>
+        <div class='btn-booking-validation pr-3'>
+            <i class="fas fa-calendar-minus text-green"></i>
+            <i class="fas fa-calendar-minus text-danger"></i>
+        </div>
+      </div>
+  <%end%>
+</div>
