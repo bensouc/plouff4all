@@ -5,14 +5,9 @@
         <i class="fas fa-arrow-circle-left "></i> Back
       <% end %>
     </div>
-  </div>
 
-
-<div class="container ">
-
-
-
-  <div class="item photo-show-swimming position-relative mb-5 "
+  <div class="container ">
+    <div class="item photo-show-swimming position-relative mb-5 "
       style='background:linear-gradient(rgba(0, 0, 0, 0.1),  80%, rgba(0, 0, 0, 0.8)), url("<%= cl_image_path  @swimming_pool.photo.key %> ")'>
     <h1 class="text-center p-2"><%= @swimming_pool.name.capitalize %></h1>
     <h3 class="text-white p-4"><%= @swimming_pool.price_per_day %>€/day</h3>
@@ -46,11 +41,12 @@
       </div>
     </div>
 
+<%# calcul du prix et reservation %>
+
     <div class="item price" data-price-target="price" data-price="<%= @swimming_pool.price_per_day %>">
-      <h3><%= @swimming_pool.price_per_day %>€/day</h3>
       <h3 data-price-target="total"> 0€</h3>
     </div>
-  </div>
+  <div>
 
   <div class="price_wrapper">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
@@ -78,21 +74,24 @@
         <%= f.submit "Plonger ! " %>
     <% end %>
   </div>
-
-
   <h2 class="text-center mt-4">Our customers also recommend...</h2>
-  <!-- <div class="top-rated-box recommandation">
 
-  <% @swimming_pools.each do |pool| %>
-    <div class="item">
-      <%= cl_image_tag pool.photo.key %>
-      <div class="content-home-swimming">
-        <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
-        <h2><%= pool.name %></h2>
-        <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-        <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
-        <h4 class="rating">5.0 ★</h4>
-      </div>
-    </div>
-  <% end %>
-</div>
+  <div class="top-rated-box ">
+    <% @swimming_pools.each do |pool| %>
+      <%= link_to swimming_pool_path(pool) do %>
+        <div class="card-index item">
+          <%= cl_image_tag pool.photo.key %>
+          <div class="content-home-swimming w-100">
+            <div class='d-flex justify-content-between'>
+              <h2><%= pool.name %></h2>
+              <h2 class="rating" style='color'>5 ★</h2>
+            </div>
+            <div class=''>
+              <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
