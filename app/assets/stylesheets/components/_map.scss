@@ -18,6 +18,9 @@
   flex-grow: 1;
   text-align: right;
   font-family: 'Open Sans', sans-serif;
+  :hover {
+    text-decoration: none;
+  }
   .mapboxgl-popup-content-price {
     font-size: 2em;
     font-weight: bold;
