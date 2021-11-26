@@ -38,13 +38,40 @@
       </div>
     </div>
   </div>
+
+  <div class="item price" data-price-target="price" data-price="<%= @swimming_pool.price_per_day %>">
+    <h3><%= @swimming_pool.price_per_day %>€/day</h3>
+  <p>Prix total :</p> <h3 data-price-target="total"> 0€</h3>
 </div>
 
+<div class="price_wrapper">
+  <div class="start_date">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
 
-
-  <div class="text-center">
-     <%= link_to "I want to swmin in it ! Let's book", "", class: "btn btn-gradient text-center"  %>
+  <%= form_with model: [@swimming_pool, @new_booking], authenticity_token: true do |f| %>
+      <%= f.text_field :start_date,
+        data: {
+          controller: "flatpickr",
+          flatpickr_date_format: "Y-m-d",
+          flatpickr_min_date: Time.zone.now,
+          'price-target': 'start',
+          'action': 'change->price#comput_price'
+        } %>
   </div>
+  <div class="end_date">
+      <%= f.text_field :end_date,
+        data: {
+          controller: "flatpickr",
+          flatpickr_date_format: "Y-m-d",
+          flatpickr_min_date: Time.zone.now,
+          'price-target': 'end',
+          'action': 'change->price#comput_price'
+        } %>
+      <%= f.submit "Plonger ! " %>
+  <% end %>
+  </div>
+</div>
+
 
 
 
@@ -65,10 +92,6 @@
     <% end %>
   </div>
 
-</div>
-<%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.submit "coucou" %>
-<% end %>
 
+</div>
+<%# <%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
