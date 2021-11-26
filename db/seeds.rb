@@ -202,17 +202,6 @@ pool_test9 = SwimmingPool.create!(
 file = URI.open('https://medias.spotern.com/spots/w640/66/66473-1532336916.jpg')
 pool_test9.photo.attach(io: file, filename: '66473-1532336916.jpg', content_type: 'image/jpg')
 
-puts 'geocoded pool_test'
-pools = [pool_test1, pool_test2, pool_test3, pool_test4, pool_test5, pool_test6, pool_test7, pool_test8, pool_test9]
-address = ['Cassis, Bouches-du-Rhône', 'Nantes - 44', 'Saint-Laurent-du-Var, France',
-           'port de Nice', 'Nantes-Chantenay', 'Versailles - 78', 'Aurillac, Cantal',
-           'rio de janeiro, Brasil', 'Nantes sur Loire']
-
-for i in 0..8
-  pools[i].address = address[i]
-  puts pools[i].address
-end
-
 puts 'create bookings'
 
 Booking.create!(

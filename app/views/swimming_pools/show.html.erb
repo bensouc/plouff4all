@@ -4,6 +4,7 @@
     <i class="fas fa-arrow-circle-left "></i> Back
   <% end %>
   </div>
+
 <div class="container ">
 
 
@@ -12,11 +13,12 @@
       style='background:linear-gradient(rgba(0, 0, 0, 0.1),  80%, rgba(0, 0, 0, 0.8)), url("<%= cl_image_path  @swimming_pool.photo.key %> ")'>
     <h1 class="text-center p-2"><%= @swimming_pool.name.capitalize %></h1>
     <h3 class="text-white p-4"><%= @swimming_pool.price_per_day %>€/day</h3>
+    <h4 class="text-center p-2 address"><%= @swimming_pool.address.capitalize %></h4>
     <div class="show-description p-5">
       <h4 class="text-center">Features</h3>
       <ul class="list-unstyled">
-          <li class="mb-2"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.length %><span>m long</span></li>
-          <li class="mb-2"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
+          <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.length %><span>m long</span></li>
+          <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
           <li class="mb-2"><i class="fas fa-arrows-alt-v mr-2"></i><%=@swimming_pool.max_depth %><span>m deep</span></li>
           <% if @swimming_pool.treatment %>
           <li class="mb-2"><i class="fas fa-water mr-2"></i><span>Natural treatment</span></li>
@@ -26,13 +28,13 @@
           <li class="mb-2"><i class="fas fa-thermometer-three-quarters mr-2"></i><%=@swimming_pool.temperature %><span>°C</span></li>
           <li class="mb-2"><i class="fas fa-users mr-2"></i><%=@swimming_pool.max_people %><span> max</span></li>
           <% if@swimming_pool.kids_friendly %>
-            <li class="mb-2"><i class="fas fa-child"></i></li>
+            <li class="d-inline"><i class="fas fa-child"></i></li>
           <% end %>
           <% if @swimming_pool.pets_friendly %>
-            <li class="mb-2"><i class="fas fa-paw"></i></li>
+            <li class="d-inline"><i class="fas fa-paw"></i></li>
               <% end %>
            <h5 class="text-center p-2">Stories</h5>
-           <div class= "text-center">
+           <div class="text-justify">
             <%=@swimming_pool.description %><p></p>
       </ul>
       </div>
@@ -71,4 +73,3 @@
   <%= f.input :end_date, as: :date %>
   <%= f.submit "coucou" %>
 <% end %>
-
