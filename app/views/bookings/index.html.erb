@@ -5,10 +5,11 @@
       <div class="card-booking">
         <%= cl_image_tag  pool.photo.key %>
         <div class="card-booking-infos w-100">
+          <%# <div class="sp_picture"> <%= booking.swimming_pool.photo </div> %>
           <h2><%=pool.name%></h2>
           From : <%=renter.first_name%>
           <div class="details-info">
-            <p>Total Price : <%=booking.total_price%> €</p>
+            <p>Total Price : <%= booking.total_price %> €</p>
           </div>
           <div class=calendar>
             <p>From : <%=booking.start_date%></p>
