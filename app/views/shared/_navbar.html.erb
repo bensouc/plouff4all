@@ -16,11 +16,11 @@
         </li>
       <%end%>
       <%if !user_signed_in? || current_user.role != 'owner' %>
-      <li class="nav-item align-self-center">
-        <%= link_to "Becoming a Host", new_swimming_pool_path, class: "btn-ghost futur-host" %>
+      <li class="nav-item align-self-center pt">
+        <%= link_to "Becoming a Host", new_swimming_pool_path, class: "btn-ghost futur-host mt-1" %>
       </li>
       <% else %>
-        <%= link_to "Add a new Ploof", new_swimming_pool_path, class: "btn-ghost futur-host" %>
+        <%= link_to "Add a new Ploof", new_swimming_pool_path, class: "btn-ghost futur-host mt-1" %>
       <% end %>
 
       <%if user_signed_in?%>
