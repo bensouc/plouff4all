@@ -207,9 +207,10 @@ body {
 // TOP RATED SWIMMING POOLS
 .top-rated-box {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 4px;
+  // align-items: center;
+  // justify-content: space-evenly;
+  // border-radius: 4px;
+  justify-content: space-around;
   :hover{
       text-decoration: none;
     }
@@ -237,10 +238,10 @@ body {
     }
   }
 
-  img {
-    width: 155px;
-    border-radius: 4px;
-  }
+  // img {
+  //   width: 155px;
+  //   border-radius: 4px;
+  // }
   p{
     font-size: 10px;
     color: $light-gray;
