@@ -77,12 +77,24 @@
 
 
   // RÉSERVATION START
-
-  .price_wrapper{
+.reservation2 {
+  background-color: whitesmoke;
+  border-style: solid;
+  border-color: yellowgreen;
+}
+  form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
   }
 
+  input {
+    border: none;
+    border-radius: 4px;
+    padding: 12px 10px;
+    text-align: center;
+    width: 250px;
+  }
   // RÉSERVATION END
 
 
@@ -105,11 +117,11 @@
 
 .description-swimming-pools {
   margin-top: 3rem;
-  margin-bottom: 3rem;
-      background-color: white;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
-    padding: 50px 50px;
-    border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
+  padding: 50px 50px;
+  border-radius: 10px;
 }
 
 .recommandation {
@@ -139,13 +151,13 @@
 
 .price{
   display: flex;
-  flex-direction: column;
-  justify-content:space-around;
+  flex-direction: row;
+  justify-content:center;
 }
-.price > h3{
+.price h3{
 color: $blue;
 // margin-top: 2rem;
-font-size: 30px;
+font-size: 24px;
 }
 
 .price_wrapper{
