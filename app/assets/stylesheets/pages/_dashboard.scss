@@ -11,6 +11,17 @@
   }
 }
 
+.link_dashboard{
+  margin-left: 50px;
+  text-decoration: none;
+  color: white;
+  padding-top: 55px;
+  font-weight: bold;
+}
+.link_dashboard:hover{
+  text-decoration: none;
+  color: whitesmoke;
+}
 :root {
   --darkgreen: #005361;
   --white: #fff;

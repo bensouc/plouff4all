@@ -29,6 +29,7 @@
 }
 .photo-show-swimming {
   background-size: cover !important;
+  background-position: center;
   overflow: hidden;
   width: 100%;
   height: 70vh;
@@ -44,10 +45,23 @@
   h3 {
     font-size: 2.5rem;
   }
+  .address {
+    position: absolute;
+    bottom: 10px;
+    left: -250px;
+    color: white;
+    transition: all 0.5s;
+    transition-delay: 250ms, 0ms;
+    font-size: 2rem;
+    opacity: 0;
+    //police
+
+
+  }
   .show-description {
     background-color: white;
     color: black;
-    opacity: 0.9;
+    opacity: 0.7;
     position: absolute;
     bottom: 0px;
     right: -33%;
@@ -56,15 +70,42 @@
     transition: transform 0.5s;
     font-size: 1.15rem;
     h4 {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
+      font-family: 'Dancing Script', cursive;
     }
   }
+
+
+  // RÉSERVATION START
+.reservation2 {
+  background-color: whitesmoke;
+  border-style: solid;
+  border-color: yellowgreen;
+}
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+  }
+
+  input {
+    border: none;
+    border-radius: 4px;
+    padding: 12px 10px;
+    text-align: center;
+    width: 250px;
+  }
+  // RÉSERVATION END
 
 
   &:hover {
     background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
     h1 {
-      transform: translate(-800px);
+      transform: translateY(-50px);
+    }
+    .address {
+      transform: translateX(260px);
+      opacity: 0.6;
     }
     .show-description {
       transform: translate(-100%);
@@ -76,11 +117,11 @@
 
 .description-swimming-pools {
   margin-top: 3rem;
-  margin-bottom: 3rem;
-      background-color: white;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
-    padding: 50px 50px;
-    border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
+  padding: 50px 50px;
+  border-radius: 10px;
 }
 
 .recommandation {
@@ -100,18 +141,17 @@
   }
 }
 
-// .btn-flat {
-//   color: blue;
-//   padding: 8px 24px;
-//   border-radius: 4px;
-//   background: $white;
-//   transition: background 0.3s ease;
-// }
 
-.price > h3{
+.price{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.price h3{
 color: $blue;
-margin-top: 2rem;
-font-size: 30px;
+// margin-top: 2rem;
+font-size: 24px;
 }
 
 .price_wrapper{
@@ -124,4 +164,7 @@ font-size: 30px;
   .fa-thermometer-three-quarters {
     color: red;
   }
+}
+.fa-paw {
+  color: brown
 }

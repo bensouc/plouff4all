@@ -1,121 +1,96 @@
-<div class= "d-flex p-2 ">
-  <div>
-  <%= link_to swimming_pools_path, class:"btn btn-flat" do %>
-    <i class="fas fa-arrow-circle-left "></i> Back
-  <% end %>
-  </div>
-</div>
-<div class="container ">
+<div data-controller='price'>
+  <div class= "d-flex p-2 ">
+    <div>
+      <%= link_to swimming_pools_path, class:"btn btn-flat" do %>
+        <i class="fas fa-arrow-circle-left "></i> Back
+      <% end %>
+    </div>
 
-
-
-  <div class="item photo-show-swimming position-relative mb-5 "
+  <div class="container ">
+    <div class="item photo-show-swimming position-relative mb-5 "
       style='background:linear-gradient(rgba(0, 0, 0, 0.1),  80%, rgba(0, 0, 0, 0.8)), url("<%= cl_image_path  @swimming_pool.photo.key %> ")'>
     <h1 class="text-center p-2"><%= @swimming_pool.name.capitalize %></h1>
     <h3 class="text-white p-4"><%= @swimming_pool.price_per_day %>€/day</h3>
+    <h4 class="text-center p-2 address"><%= @swimming_pool.address.capitalize %></h4>
     <div class="show-description p-5">
       <h4 class="text-center">Features</h3>
       <ul class="list-unstyled">
-          <li class="mb-2"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.length %><span>m long</span></li>
-          <li class="mb-2"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
+          <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.length %><span>m long</span></li>
+          <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
+
           <li class="mb-2"><i class="fas fa-arrows-alt-v mr-2"></i><%=@swimming_pool.max_depth %><span>m deep</span></li>
           <% if @swimming_pool.treatment %>
-          <li class="mb-2"><i class="fas fa-water mr-2"></i><span>Natural treatment</span></li>
+          <li class="mb-2"><i class="fas fa-water mr-2 text-primary"></i><span>Natural treatment</span></li>
           <% else %>
-          <li class="mb-2"><i class="fas fa-water mr-2"></i><span>Chemical treatment</span></li>
+          <li class="mb-2"><i class="fas fa-water mr-2 text-primary"></i><span>Chemical treatment</span></li>
           <% end %>
-          <li class="mb-2"><i class="fas fa-thermometer-three-quarters mr-2"></i><%=@swimming_pool.temperature %><span>°C</span></li>
-          <li class="mb-2"><i class="fas fa-users mr-2"></i><%=@swimming_pool.max_people %><span> max</span></li>
+          <li class="mb-2"><i class="fas fa-thermometer-three-quarters mr-2 text-danger"></i><%=@swimming_pool.temperature %><span>°C</span></li>
+          <li class="mb-2"><i class="fas fa-users mr-2 text-success"></i><%=@swimming_pool.max_people %><span> max</span></li>
           <% if@swimming_pool.kids_friendly %>
-            <li class="mb-2"><i class="fas fa-child"></i></li>
+            <li class="d-inline"><i class="fas fa-child"></i></li>
           <% end %>
           <% if @swimming_pool.pets_friendly %>
-            <li class="mb-2"><i class="fas fa-paw"></i></li>
+            <li class="d-inline"><i class="fas fa-paw"></i></li>
               <% end %>
+
            <h5 class="text-center p-2">Stories</h5>
-           <div class= "text-center">
+           <div class="text-justify">
+
             <%=@swimming_pool.description %><p></p>
-      </ul>
+          </div>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <div class="item price" data-price-target="price" data-price="<%= @swimming_pool.price_per_day %>">
-    <h3><%= @swimming_pool.price_per_day %>€/day</h3>
-  <p>Prix total :</p> <h3 data-price-target="total"> 0€</h3>
-</div>
+<%# calcul du prix et reservation %>
 
-<div class="price_wrapper">
-  <div class="start_date">
-  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+    <div class="item price" data-price-target="price" data-price="<%= @swimming_pool.price_per_day %>">
+      <h3 data-price-target="total"> 0€</h3>
+    </div>
+  <div>
 
-  <%= form_with model: [@swimming_pool, @new_booking], authenticity_token: true do |f| %>
-      <%= f.text_field :start_date,
-        data: {
-          controller: "flatpickr",
-          flatpickr_date_format: "Y-m-d",
-          flatpickr_min_date: Time.zone.now,
-          'price-target': 'start',
-          'action': 'change->price#comput_price'
-        } %>
-  </div>
-  <div class="end_date">
-      <%= f.text_field :end_date,
-        data: {
-          controller: "flatpickr",
-          flatpickr_date_format: "Y-m-d",
-          flatpickr_min_date: Time.zone.now,
-          'price-target': 'end',
-          'action': 'change->price#comput_price'
-        } %>
-      <%= f.submit "Plonger ! " %>
-  <% end %>
-  </div>
-</div>
-
-
-
-
-  <h2 class="text-center mt-4">Our customers also recommend...</h2>
-  <!-- <div class="top-rated-box recommandation">
-
-    <% @swimming_pools.each do |pool| %>
-      <div class="item">
-        <%= cl_image_tag pool.photo.key %>
-        <div class="content-home-swimming">
-          <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
-          <h2><%= pool.name %></h2>
-          <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-          <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
-          <h4 class="rating">5.0 ★</h4>
-        </div>
+  <div class="price_wrapper">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <%= form_with model: [@swimming_pool, @new_booking], authenticity_token: true, remote: true do |f| %>
+      <div class="start_date">
+        <%= f.text_field :start_date,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.zone.now,
+            'price-target': 'start',
+            'action': 'change->price#computPrice'
+          } %>
       </div>
+      <div class="end_date">
+        <%= f.text_field :end_date,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.zone.now,
+            'price-target': 'end',
+            'action': 'change->price#computPrice'
+          } %>
+      </div>
+        <%= f.submit "Plonger ! " %>
     <% end %>
-  </div> -->
-
-  <div class="top-rated-box">
-    <% @swimming_pools.sample(3).each do |pool| %>
+  </div>
+  <h2 class="text-center mt-4">Our customers also recommend...</h2>
+  <div class="top-rated-box ">
+    <% @swimming_pools.each do |pool| %>
       <%= link_to swimming_pool_path(pool) do %>
-          <div class="card-index">
-            <%= cl_image_tag pool.photo.key %>
-            <div class="card-index-infos">
-              <div class="card-name-pricing">
-                <h1 class="card-index-name"><%= pool.name.capitalize %></h1>
-                <h1 class="card-index-pricing"><%= pool.price_per_day %> €/day</h1>
-              </div>
-              <div>
-                <h1 class="card-index-address"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></h1>
-              </div>
-              <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
+        <div class="card-index item">
+          <%= cl_image_tag pool.photo.key %>
+          <div class="content-home-swimming w-100">
+            <div class='d-flex justify-content-between'>
+              <h2><%= pool.name %></h2>
+              <h2 class="rating" style='color'>5 ★</h2>
+            </div>
+            <div class=''>
+              <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
-
-<%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.submit "coucou" %>
-<% end %>

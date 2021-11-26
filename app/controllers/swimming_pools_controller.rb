@@ -10,14 +10,6 @@ class SwimmingPoolsController < ApplicationController
     end
 
     @markers = geo_marked(@swimming_pools)
-    # @markers = @swimming_pools.geocoded.map do |pool|
-    #   {
-    #     lat: pool.latitude,
-    #     lng: pool.longitude,
-    #     info_marker: render_to_string(partial: "info_marker", locals: { pool: pool }),
-    #     image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
-    #   }
-    # end
   end
 
   def geo_marked(swimming_pools)
@@ -48,7 +40,7 @@ class SwimmingPoolsController < ApplicationController
   def show
     @swimming_pool = SwimmingPool.find(params[:id])
     @new_booking = Booking.new
-    @swimming_pools = SwimmingPool.all.sample(4)
+    @swimming_pools = SwimmingPool.all.sample(3)
   end
 
   private
