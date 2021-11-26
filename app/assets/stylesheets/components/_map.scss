@@ -1,9 +1,9 @@
 #map {
   // flex-grow: 1;
   margin-top: 5vh;
-  margin-left: 5vh;
-  height: 75vh;
-  width: 100%;
+  // margin-left: 5vh;
+  // height: 75vh;
+  // width: 100%;
   position: sticky;
   top: 0;
   border-radius: 4px;
@@ -18,6 +18,9 @@
   flex-grow: 1;
   text-align: right;
   font-family: 'Open Sans', sans-serif;
+  :hover {
+    text-decoration: none;
+  }
   .mapboxgl-popup-content-price {
     font-size: 2em;
     font-weight: bold;

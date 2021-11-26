@@ -1,9 +1,12 @@
-<div class= "d-flex p-2 ">
-  <div>
-  <%= link_to swimming_pools_path, class:"btn btn-flat" do %>
-    <i class="fas fa-arrow-circle-left "></i> Back
-  <% end %>
+<div data-controller='price'>
+  <div class= "d-flex p-2 ">
+    <div>
+      <%= link_to swimming_pools_path, class:"btn btn-flat" do %>
+        <i class="fas fa-arrow-circle-left "></i> Back
+      <% end %>
+    </div>
   </div>
+
 
 <div class="container ">
 
@@ -19,6 +22,7 @@
       <ul class="list-unstyled">
           <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.length %><span>m long</span></li>
           <li class="d-inline pl-5"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
+
           <li class="mb-2"><i class="fas fa-arrows-alt-v mr-2"></i><%=@swimming_pool.max_depth %><span>m deep</span></li>
           <% if @swimming_pool.treatment %>
           <li class="mb-2"><i class="fas fa-water mr-2 text-primary"></i><span>Natural treatment</span></li>
@@ -35,41 +39,60 @@
               <% end %>
            <h4 class="text-center p-2">Stories</h4>
            <div class="text-justify address-description">
+
             <%=@swimming_pool.description %><p></p>
-      </ul>
+          </div>
+        </ul>
       </div>
     </div>
-  </div>
-</div>
 
-
-
-  <div class="text-center">
-     <%= link_to "I want to swmin in it ! Let's book", "", class: "btn btn-gradient text-center"  %>
+    <div class="item price" data-price-target="price" data-price="<%= @swimming_pool.price_per_day %>">
+      <h3><%= @swimming_pool.price_per_day %>€/day</h3>
+      <h3 data-price-target="total"> 0€</h3>
+    </div>
   </div>
 
-
-
-  <h2 class="text-center mt-4">Our customers also recommend...</h2>
-  <div class="top-rated-box recommandation">
-
-    <% @swimming_pools.each do |pool| %>
-      <div class="item">
-        <%= cl_image_tag pool.photo.key %>
-        <div class="content-home-swimming">
-          <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
-          <h2><%= pool.name %></h2>
-          <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-          <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
-          <h4 class="rating">5.0 ★</h4>
-        </div>
+  <div class="price_wrapper">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <%= form_with model: [@swimming_pool, @new_booking], authenticity_token: true, remote: true do |f| %>
+      <div class="start_date">
+        <%= f.text_field :start_date,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.zone.now,
+            'price-target': 'start',
+            'action': 'change->price#computPrice'
+          } %>
       </div>
+      <div class="end_date">
+        <%= f.text_field :end_date,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.zone.now,
+            'price-target': 'end',
+            'action': 'change->price#computPrice'
+          } %>
+      </div>
+        <%= f.submit "Plonger ! " %>
     <% end %>
   </div>
 
+
+  <h2 class="text-center mt-4">Our customers also recommend...</h2>
+  <!-- <div class="top-rated-box recommandation">
+
+  <% @swimming_pools.each do |pool| %>
+    <div class="item">
+      <%= cl_image_tag pool.photo.key %>
+      <div class="content-home-swimming">
+        <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+        <h2><%= pool.name %></h2>
+        <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
+        <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
+        <h4 class="rating">5.0 ★</h4>
+      </div>
+    </div>
+  <% end %>
 </div>
-<%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.submit "coucou" %>
-<% end %>
