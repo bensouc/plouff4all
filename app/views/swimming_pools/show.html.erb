@@ -13,10 +13,10 @@
     <h3 class="text-white p-4"><%= @swimming_pool.price_per_day %>€/day</h3>
     <h4 class="text-center p-2 address"><%= @swimming_pool.address.capitalize %></h4>
     <div class="show-description p-5">
-      <h4 class="text-center">Features</h3>
+      <h4 class="text-center">Features</h4>
       <ul class="list-unstyled">
           <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.length %><span>m long</span></li>
-          <li class="d-inline"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
+          <li class="d-inline pl-5"><i class="fas fa-arrows-alt-h mr-2"></i><%=@swimming_pool.width %><span>m wide</span></li>
 
           <li class="mb-2"><i class="fas fa-arrows-alt-v mr-2"></i><%=@swimming_pool.max_depth %><span>m deep</span></li>
           <% if @swimming_pool.treatment %>
@@ -32,9 +32,8 @@
           <% if @swimming_pool.pets_friendly %>
             <li class="d-inline"><i class="fas fa-paw"></i></li>
               <% end %>
-
-           <h5 class="text-center p-2">Stories</h5>
-           <div class="text-justify">
+           <h4 class="text-center p-2">Stories</h4>
+           <div class="text-justify address-description">
 
             <%=@swimming_pool.description %><p></p>
           </div>
@@ -75,6 +74,7 @@
         <%= f.submit "Plonger ! " %>
     <% end %>
   </div>
+
   <!-- TOP RATED-->
 
     <h1 class="text-center mt-4">Our TOP RATED Ploofs</h1>
@@ -93,6 +93,7 @@
               <div class=''>
                 <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
               </div>
+
             </div>
           </div>
         <% end %>
