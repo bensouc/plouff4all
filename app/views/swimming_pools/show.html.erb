@@ -4,6 +4,7 @@
     <i class="fas fa-arrow-circle-left "></i> Back
   <% end %>
   </div>
+</div>
 <div class="container ">
 
 
@@ -76,7 +77,7 @@
 
 
   <h2 class="text-center mt-4">Our customers also recommend...</h2>
-  <div class="top-rated-box recommandation">
+  <!-- <div class="top-rated-box recommandation">
 
     <% @swimming_pools.each do |pool| %>
       <div class="item">
@@ -90,8 +91,31 @@
         </div>
       </div>
     <% end %>
+  </div> -->
+
+  <div class="top-rated-box">
+    <% @swimming_pools.sample(3).each do |pool| %>
+      <%= link_to swimming_pool_path(pool) do %>
+          <div class="card-index">
+            <%= cl_image_tag pool.photo.key %>
+            <div class="card-index-infos">
+              <div>
+                <h1 class="card-index-name"><%= pool.name.capitalize %></h1>
+              </div>
+              <div class="card-address-pricing">
+                <h1 class="card-index-pricing"><%= pool.price_per_day %> €/day</h1>
+                <h1 class="card-index-address"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize.last(25) %></h1>
+              </div>
+              <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
-
-</div>
-<%# <%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
+<%= simple_form_for([@swimming_pool, @new_booking]) do |f| %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <%= f.submit "coucou" %>
+<% end %>
