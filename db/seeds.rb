@@ -14,15 +14,15 @@ Booking.destroy_all
 
 puts "creating user"
 
-owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Laurent', last_name:  'Plouff', birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
-  role: 'owner',address: 'nantes',phone_number: '0604584584')
+owner_test = User.create!(email: 'owner@eami.com', password: 'secret', first_name: 'Connor', last_name:  'McLeod', birth_date:  '27/05/458',bio: 'cerncmnercreipuibniernficpnn',
+  role: 'owner',address: 'scotland',phone_number: '0604584584')
 
 
   file = URI.open('https://res.cloudinary.com/bensoucdev/image/upload/v1637829103/maclead_ndqreh.jpg')
 owner_test.photo.attach(io: file, filename: 'maclead_ndqreh.jpg', content_type: 'image/jpg')
 
-owner_test2 = User.create!(email: 'bensouc@gmail.com', password: 'secret', first_name: 'Ben',last_name:  'Souc',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
-  role: 'owner',address: '47 rue des freres amieux nantes',phone_number: '0604584584')
+owner_test2 = User.create!(email: 'prout@gmail.com', password: 'secret', first_name: 'Ben',last_name:  'Souc',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
+  role: 'owner',address: '58 rue des frero de miel nantes',phone_number: '0604584584')
 
 file = URI.open('https://res.cloudinary.com/bensoucdev/image/upload/v1637794731/ID_BMO_vrefar.jpg')
 owner_test2.photo.attach(io: file, filename: 'ID_BMO_vrefar.jpg', content_type: 'image/jpg')
@@ -30,6 +30,7 @@ owner_test2.photo.attach(io: file, filename: 'ID_BMO_vrefar.jpg', content_type: 
 
 renter_test = User.create!(email: 'renter@eami.com', password: 'secret', first_name: 'Hélène',last_name:  'Lemoine',birth_date:  '27/05/1980',bio: 'cerncmnercreipuibniernficpnn',
   role: 'renter', address: 'nantes', phone_number: '0604584584')
+
 
 puts "create swimming pools"
 pool_test1 = SwimmingPool.create!(
@@ -167,7 +168,7 @@ pool_test7.photo.attach(io: file, filename: 'piscine_de_france_exception.jpg', c
 pool_test8 = SwimmingPool.create!(
   name: 'En plein foret vierge',
   description: "Unique au Monde, la piscine à déversement en pleine foret tropicale",
-  address: 'Av. Delfim Moreira, 816 - Leblon, Rio de Janeiro - RJ, 22441-000, Brésil',
+  address: "Rte d'Épinard, 49000 Angers, france",
   length: '16',
   width: '5',
   max_depth: '2',

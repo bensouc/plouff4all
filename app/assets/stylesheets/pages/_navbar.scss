@@ -1,14 +1,26 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  color: $darkgrey ;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.hello{
+width: 150px;
+}
+
+.futur-host{
+  margin-right: 30px;
+  text-decoration: none;
+  color:orangered
+}
+
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px;
+  margin-left: 15px;
 }
 
 #register-button{
