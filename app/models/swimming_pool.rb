@@ -12,8 +12,7 @@ class SwimmingPool < ApplicationRecord
   validates :max_depth, presence: true, numericality: { only_integer: true }
   validates :price_per_day, presence: true, numericality: { only_integer: true }
   validates :max_people, presence: true, numericality: { only_integer: true }
-  validates :kids_friendly, presence: true
-  validates :pets_friendly, presence: true
+
 
   validates :treatment, presence: true
 
