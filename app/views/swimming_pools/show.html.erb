@@ -79,22 +79,22 @@
         <%= f.submit "Plonger ! " %>
     <% end %>
   </div>
-
-
   <h2 class="text-center mt-4">Our customers also recommend...</h2>
-  <!-- <div class="top-rated-box recommandation">
-
-  <% @swimming_pools.each do |pool| %>
-    <div class="item">
-      <%= cl_image_tag pool.photo.key %>
-      <div class="content-home-swimming">
-        <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
-        <h2><%= pool.name %></h2>
-        <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-        <h4><i class="fas fa-tags"></i> <%= pool.price_per_day %>$/day </h4>
-        <h4 class="rating">5.0 ★</h4>
-      </div>
-    </div>
-  <% end %>
-</div>
-
+  <div class="top-rated-box ">
+    <% @swimming_pools.each do |pool| %>
+      <%= link_to swimming_pool_path(pool) do %>
+        <div class="card-index item">
+          <%= cl_image_tag pool.photo.key %>
+          <div class="content-home-swimming w-100">
+            <div class='d-flex justify-content-between'>
+              <h2><%= pool.name %></h2>
+              <h2 class="rating" style='color'>5 ★</h2>
+            </div>
+            <div class=''>
+              <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
