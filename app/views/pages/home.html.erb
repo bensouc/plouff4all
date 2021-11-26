@@ -84,14 +84,14 @@
 
 <!-- <div class="top-rated-box"> -->
 <div>
- <h1 class="text-center mt-4">Soo SAD, no Ploof experience Booked...<br>
+ <h1 class='text-center'>Soo SAD, no Ploof experience Booked...<br>
  <strong> Pick a pool below</strong> and live the PLOOF of your Life !!!</h1>
- <div class="top-rated-box recommandation"
+ <div class="top-rated-box ">
    <% @swimming_pools.each do |pool| %>
      <%= link_to swimming_pool_path(pool) do %>
-       <div class="card-index item">
+       <div class="card-index">
          <%= cl_image_tag pool.photo.key %>
-         <div class="content-home-swimming w-100">
+         <div class="content-home-swimming w-100 p-3">
            <div class='d-flex justify-content-between'>
              <h2><%= pool.name %></h2>
              <h2 class="rating">5 ★</h2>
