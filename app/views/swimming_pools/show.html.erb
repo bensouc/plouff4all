@@ -74,24 +74,29 @@
         <%= f.submit "Plonger ! " %>
     <% end %>
   </div>
-  <h2 class="text-center mt-4">Our customers also recommend...</h2>
 
-  <div class="top-rated-box ">
-    <% @swimming_pools.each do |pool| %>
-      <%= link_to swimming_pool_path(pool) do %>
-        <div class="card-index item">
-          <%= cl_image_tag pool.photo.key %>
-          <div class="content-home-swimming w-100">
-            <div class='d-flex justify-content-between'>
-              <h2><%= pool.name %></h2>
-              <h2 class="rating" style='color'>5 ★</h2>
-            </div>
-            <div class=''>
-              <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+  <!-- TOP RATED-->
+
+    <h1 class="text-center mt-4">Our TOP RATED Ploofs</h1>
+  <div>
+    <div class="top-rated-box ">
+
+      <% @swimming_pools.each do |pool| %>
+        <%= link_to swimming_pool_path(pool) do %>
+          <div class="card-index ">
+            <%= cl_image_tag pool.photo.key %>
+            <div class="content-home-swimming w-100">
+              <div class='d-flex justify-content-between'>
+                <h2><%= pool.name %></h2>
+                <h2 class="rating">5 ★</h2>
+              </div>
+              <div class=''>
+                <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+              </div>
+
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-
+    </div>
+   </div>

@@ -17,5 +17,7 @@ background-size: cover;
   display: flex;
   flex-direction: row;
   // justify-content: space-between;
-
+  .column {
+    padding-right: 5vh;
+  }
 }

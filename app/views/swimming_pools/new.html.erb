@@ -1,12 +1,13 @@
 
 <div class="new-pool-box">
   <div>
-    <img src='https://actualite.seloger-construire.com/sites/default/files/article/nuit-villa-piscine_0.jpg' alt="Villa-pool by night">
+    <img src='https://actualite.seloger-construire.com/sites/default/files/article/nuit-villa-piscine_0.jpg'
+        alt="Villa-pool by night", style="width: 50vw">
   </div>
   <div class="item">
     <h2>Describe Your AMAZING Ploof</h2>
     <div class="infos">
-      <div>
+      <div class="column">
         <%= simple_form_for @swimming_pool do |f| %>
         <%= f.input :name, label: 'Name of your pool', placeholder: 'Big blue pool...' %>
         <%= f.input :description %>
@@ -15,7 +16,7 @@
         <%= f.input :temperature, label: 'Water Temperature (°C)', placeholder: '20' %>
         <%= f.input :treatment, label: 'Water Treatment', collection: ['Natural Filtering',  'Chlorine', 'Salt-water'] %>
       </div>
-      <div>
+      <div class="column">
         <%= f.input :length, label: 'Length (in meters)', placeholder: '50' %>
         <%= f.input :width, label:    'Width (in meters)', placeholder: '50' %>
         <%= f.input :max_depth, label: 'Max_depth (in meters)', placeholder: '2' %>
