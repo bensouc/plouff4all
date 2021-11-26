@@ -32,7 +32,7 @@
             <% end %>
          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My SwimminPools", owner_bookings_path, class: "dropdown-item"%>
-            <%= link_to "Add a Swimming Pool", "new_swimming_pool_path", class: "dropdown-item"if current_user.role == 'owner'  %>
+            <%= link_to "Add a Swimming Pool", new_swimming_pool_path, class: "dropdown-item"if current_user.role == 'owner'  %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
           </div>
