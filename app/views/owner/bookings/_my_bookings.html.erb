@@ -1,13 +1,13 @@
 <h2 class='pl-4 pt-3 fw-b' ><strong>Your Bookings</strong></h2>
 <%if @my_bookings.length == 0%>
-   <div>
+  <div>
     <h1 class="text-center mt-4">Soo SAD, no Ploof experience Booked...<br>
     <strong> Pick a pool below</strong> and live the PLOOF of your Life !!!</h1>
-    <div class="top-rated-box recommandation">
-
+    <div>
+    <div class="top-rated-box ">
       <% @swimming_pools.each do |pool| %>
         <%= link_to swimming_pool_path(pool) do %>
-          <div class="card-index item">
+          <div class="card-index ">
             <%= cl_image_tag pool.photo.key %>
             <div class="content-home-swimming w-100">
               <div class='d-flex justify-content-between'>
@@ -23,6 +23,7 @@
       <% end %>
     </div>
    </div>
+  </div>
 <% else %>
   <div class="container">
     <div class='d-flex flex-wrap'>
