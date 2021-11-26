@@ -3,7 +3,7 @@ class Owner::BookingsController < ApplicationController
     @bookings = current_user.bookings_as_owner
     @pools = current_user.swimming_pools
     @my_bookings = current_user.bookings_as_renter
-    @swimming_pools = SwimmingPool.all.sample(4)
+    @swimming_pools = SwimmingPool.all.sample(3)
   end
   def accept
     @booking = Booking.find(params[:id])

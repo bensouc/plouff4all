@@ -5,6 +5,18 @@ class SwimmingPool < ApplicationRecord
 
   has_one_attached :photo
 
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :length, presence: true, numericality: { only_integer: true }
+  validates :width, presence: true, numericality: { only_integer: true }
+  validates :max_depth, presence: true, numericality: { only_integer: true }
+  validates :price_per_day, presence: true, numericality: { only_integer: true }
+  validates :max_people, presence: true, numericality: { only_integer: true }
+  validates :kids_friendly, presence: true
+  validates :pets_friendly, presence: true
+
+  validates :treatment, presence: true
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
