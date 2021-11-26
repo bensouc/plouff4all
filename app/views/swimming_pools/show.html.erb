@@ -15,8 +15,11 @@
     <h3><%= @swimming_pool.price_per_day %>€/day</h3>
   <p>Prix total :</p> <h3 data-price-target="total"> 0€</h3>
 </div>
+
 <div class="price_wrapper">
   <div class="start_date">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+
   <%= form_with model: [@swimming_pool, @new_booking], authenticity_token: true do |f| %>
       <%= f.text_field :start_date,
         data: {
@@ -40,9 +43,7 @@
   <% end %>
   </div>
 </div>
-  <div class="text-center">
-    <%= link_to "I want to swmin in it ! Let's book", "", class: "btn btn-gradient text-center"  %>
-  </div>
+
 
 
 
