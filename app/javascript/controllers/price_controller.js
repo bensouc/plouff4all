@@ -4,10 +4,12 @@ export default class extends Controller {
   static targets = ["start", "end", "price", "total"]
 
   connect() {
+    console.log('test')
     console.log(this.startTarget)
   }
 
-  comput_price() {
+  computPrice() {
+    console.log('rest')
     let start = this.startTarget.value;
     let end = this.endTarget.value;
     const p = this.priceTarget.dataset.price
@@ -22,4 +24,3 @@ export default class extends Controller {
 
   }
 }
-// export { comput_price }
