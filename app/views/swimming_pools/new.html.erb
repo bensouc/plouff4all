@@ -1,37 +1,31 @@
 
 <div class="new-pool-box">
-  <div class="item w-100">
+  <div>
     <img src='https://actualite.seloger-construire.com/sites/default/files/article/nuit-villa-piscine_0.jpg' alt="Villa-pool by night">
   </div>
   <div class="item">
-    <h1>Describe Your AMAZING Ploof</h1>
-    <%= simple_form_for @swimming_pool do |f| %>
-      <%= f.input :name, label: '   Name of your pool', placeholder: 'Big blue pool...' %>
-      <%= f.input :description %>
-      <%= f.input :address, label: '   Address of your pool' %>
-      <%= f.input :length, label: '   Length (in meters)', placeholder: '50' %>
-      <%= f.input :width, label:    '   Width (in meters)', placeholder: '50' %>
-      <%= f.input :max_depth, label: '   Max_depth (in meters)', placeholder: '2' %>
-      <%= f.input :price_per_day, label: '   Price per day (in €)', placeholder: '50' %>
-      <%= f.input :treatment, label: '   Water Treatment', collection: ['Natural Filtering',  'Chlorine', 'Salt-water'] %>
-      <%= f.input :temperature, label: '   Water Temperature (°C)', placeholder: '20' %>
-      <%= f.input :max_people,  label: '   Max nb. of people allowed', placeholder: '10' %>
-      <%= f.input :kids_friendly, label: '   Yes, kids are welcome !' %>
-      <%= f.input :pets_friendly, label: '   Are pets welcome ?', collection: ['yes', 'no'] %>
-      <%= f.input :photo, as: :file, label: '   The best Photo of Your Pool' %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-  <%# <div class='row '>
-    <div class="col-1"></div>
-    <div class="col-6">
+    <h2>Describe Your AMAZING Ploof</h2>
+    <div class="infos">
       <div>
+        <%= simple_form_for @swimming_pool do |f| %>
+        <%= f.input :name, label: 'Name of your pool', placeholder: 'Big blue pool...' %>
+        <%= f.input :description %>
+        <%= f.input :address, label: 'Address of your pool' %>
+        <%= f.input :price_per_day, label: 'Price per day (in €)', placeholder: '50' %>
+        <%= f.input :temperature, label: 'Water Temperature (°C)', placeholder: '20' %>
+        <%= f.input :treatment, label: 'Water Treatment', collection: ['Natural Filtering',  'Chlorine', 'Salt-water'] %>
+      </div>
+      <div>
+        <%= f.input :length, label: 'Length (in meters)', placeholder: '50' %>
+        <%= f.input :width, label:    'Width (in meters)', placeholder: '50' %>
+        <%= f.input :max_depth, label: 'Max_depth (in meters)', placeholder: '2' %>
+        <%= f.input :max_people,  label: 'Max nb. of people allowed', placeholder: '10' %>
+        <%= f.input :kids_friendly, label: 'Yes, kids are welcome !' %>
+        <%= f.input :pets_friendly, label: 'Are pets welcome ?', collection: ['yes', 'no'] %>
+        <%= f.input :photo, as: :file, label: 'The best Photo of Your Pool', class:"btn-flat" %>
+        <%= f.button :submit, "Valid your pool !", class:"btn-flat" %>
+        <% end %>
       </div>
     </div>
-
-    <div class='col-4 p-0' style="background-image: url('https://actualite.seloger-construire.com/sites/default/files/article/nuit-villa-piscine_0.jpg'); background-size : cover; background-position: center ; background-repeat: no-repeat;">
-    </div>
-
-  </div> %>
-
+  </div>
 </div>

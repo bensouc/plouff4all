@@ -1,14 +1,21 @@
 .new-pool-box {
   display: flex;
+}
+
+.img {
+background-size: cover;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  padding-left: 5vh;
+}
+
+.infos {
+  display: flex;
+  flex-direction: row;
   // justify-content: space-between;
-  // flex-direction: row;
-  .item {
-    width: 50%;
-    &:last-child {
-      padding: 50px 50px;
-    }
-  }
-  .img {
-    background-size: cover;
-  }
+
 }
