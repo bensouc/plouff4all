@@ -99,12 +99,12 @@
           <div class="card-index">
             <%= cl_image_tag pool.photo.key %>
             <div class="card-index-infos">
-              <div>
+              <div class="card-name-pricing">
                 <h1 class="card-index-name"><%= pool.name.capitalize %></h1>
-              </div>
-              <div class="card-address-pricing">
                 <h1 class="card-index-pricing"><%= pool.price_per_day %> €/day</h1>
-                <h1 class="card-index-address"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize.last(25) %></h1>
+              </div>
+              <div>
+                <h1 class="card-index-address"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></h1>
               </div>
               <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
             </div>
