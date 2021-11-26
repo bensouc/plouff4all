@@ -81,42 +81,27 @@
 
 
 
-<!-- <div class="top-rated-box">
-  <% @swimming_pools.each do |pool| %>
-    <%= link_to swimming_pool_path(pool) do %>
-    <div class="item">
-      <div class="photo"> <%= cl_image_tag pool.photo.key, :height=>100%></div>
-      <div class="content-home-swimming">
-        <p class="location"> <%= pool.address.capitalize %></p>
-        <h2><%= pool.name %></h2>
-        <h3> Proposed by <%= pool.user.first_name.capitalize %> </h3>
-        <h4> <%= pool.price_per_day %>€/day </h4>
-        <h4 class="rating">5.0 ★</h4>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-</div> -->
-<%# <i class="fas fa-tags"></i> %>
-<%# <i class="fas fa-location-arrow"></i> %>
 
-<div class="top-rated-box">
-  <% @swimming_pools.sample(3).each do |pool| %>
-    <%= link_to swimming_pool_path(pool) do %>
-        <div class="card-index">
-          <%= cl_image_tag pool.photo.key %>
-          <div class="card-index-infos">
-            <div class="card-name-pricing">
-              <h1 class="card-index-name"><%= pool.name.capitalize %></h1>
-              <h1 class="card-index-rate">5.0 ★</h1>
-              <h1 class="card-index-pricing"><%= pool.price_per_day %> €/day</h1>
-            </div>
-            <div>
-              <h1 class="card-index-address"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></h1>
-            </div>
-            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-user avatar-bordered" /> -->
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+<!-- <div class="top-rated-box"> -->
+<div>
+ <h1 class="text-center mt-4">Soo SAD, no Ploof experience Booked...<br>
+ <strong> Pick a pool below</strong> and live the PLOOF of your Life !!!</h1>
+ <div class="top-rated-box recommandation"
+   <% @swimming_pools.each do |pool| %>
+     <%= link_to swimming_pool_path(pool) do %>
+       <div class="card-index item">
+         <%= cl_image_tag pool.photo.key %>
+         <div class="content-home-swimming w-100">
+           <div class='d-flex justify-content-between'>
+             <h2><%= pool.name %></h2>
+             <h2 class="rating">5 ★</h2>
+           </div>
+           <div class=''>
+             <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+           </div>
+         </div>
+       </div>
+     <% end %>
+   <% end %>
+ </div>
+</div>
