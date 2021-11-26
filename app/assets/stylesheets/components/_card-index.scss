@@ -53,14 +53,13 @@
   .card-index-infos {
     padding: 0.5em;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     position: relative;
   }
-  .card-address-pricing {
+  .card-name-pricing {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
 
