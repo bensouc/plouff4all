@@ -40,7 +40,7 @@
     left: 10px;
     color: white;
     transition: transform 0.5s;
-    font-size: 2rem;
+    font-size: 0.50 rem;
   }
   h3 {
     font-size: 2.5rem;
@@ -54,6 +54,7 @@
     transition-delay: 250ms, 0ms;
     font-size: 2rem;
     opacity: 0;
+    font-weight: 300;
     //police
 
 
@@ -71,7 +72,7 @@
     font-size: 1.15rem;
     h4 {
       font-size: 1.35rem;
-      font-family: 'Dancing Script', cursive;
+      // font-family: 'Dancing Script', cursive;
     }
   }
   &:hover {
@@ -89,6 +90,10 @@
   }
 }
 
+.address-description {
+  font-size: 14px;
+  overflow: hidden;
+}
 
 
 .description-swimming-pools {
