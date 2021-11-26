@@ -1,5 +1,4 @@
-<%pools = current_user.swimming_pools%>
-<%pools.each do |pool|%>
+<%@pools.each do |pool|%>
     <div class="card-booking">
       <%= cl_image_tag  pool.photo.key, class:'img' %>
       <div class="card-booking-infos w-100 flex-column">
@@ -11,9 +10,6 @@
         Actual Price : <strong><%=pool.price_per_day%> €/day</strong>
         </div>
       </div>
-      <div class='btn-booking-validation pr-3'>
-        <%= link_to 'Edit', edit_owner_swimming_pool_path(pool.id),
-          class:'btn btn-primary  m-3'%>
-      </div>
+
     </div>
 <%end%>

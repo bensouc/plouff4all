@@ -1,4 +1,5 @@
 class SwimmingPoolsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @swimming_pools = SwimmingPool.all
 
@@ -30,9 +31,33 @@ class SwimmingPoolsController < ApplicationController
     end
   end
 
+  def new
+    @swimming_pool = SwimmingPool.new
+  end
+
+  def create
+    @swimming_pool = SwimmingPool.new(pool_params)
+    @swimming_pool.user = current_user
+    @swimming_pool.save
+    current_user.role = 'owner'
+    current_user.save
+
+    redirect_to swimming_pools_path
+  end
+
   def show
     @swimming_pool = SwimmingPool.find(params[:id])
     @new_booking = Booking.new
     @swimming_pools = SwimmingPool.all.sample(4)
+  end
+
+  private
+
+  def pool_params
+    params.require(:swimming_pool).permit(
+      :name, :description, :address, :length, :width, :max_depth,
+      :price_per_day, :treatment, :temperature, :max_people,
+      :kids_friendly, :pets_friendly, :photo
+    )
   end
 end
