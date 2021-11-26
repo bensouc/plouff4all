@@ -1,0 +1,30 @@
+#map {
+  // flex-grow: 1;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  height: 75vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  border-radius: 4px;
+}
+
+.mapboxgl-popup {
+  width: 20em;
+  height: 10em;
+}
+
+.mapboxgl-popup-content {
+  flex-grow: 1;
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  .mapboxgl-popup-content-price {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .mapboxgl-popup-content-address {
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: .7;
+  }
+}

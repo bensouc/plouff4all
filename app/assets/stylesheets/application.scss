@@ -11,9 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/dashboard";
+@import "owner/bookings/booking_card";
+@import "owner/bookings/mybooking_card";
+@import "pages/navbar";
+@import "pages/footer";
+
 
 
 // CSS for pages swimming pools
 @import "swimming_pools/index";
-@import "pages/navbar";
-@import "pages/footer";

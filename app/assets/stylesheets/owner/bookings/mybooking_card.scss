@@ -1,0 +1,42 @@
+.card-my-bookings {
+  overflow: hidden;
+  height: 150px;
+  width: 400px;
+  color: $darkgrey;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  margin: 20px 0px;
+}
+
+
+.card-my-bookings img {
+  height: 150px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-my-bookings h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-my-bookings p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-my-bookings .card-my-bookings-infos {
+  padding: 16px;
+  width: 100px;
+}
+
+.btn-my-bookings-validation{
+  font-size: 20px;
+}
