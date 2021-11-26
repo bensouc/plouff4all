@@ -5,14 +5,9 @@
         <i class="fas fa-arrow-circle-left "></i> Back
       <% end %>
     </div>
-  </div>
 
-
-<div class="container ">
-
-
-
-  <div class="item photo-show-swimming position-relative mb-5 "
+  <div class="container ">
+    <div class="item photo-show-swimming position-relative mb-5 "
       style='background:linear-gradient(rgba(0, 0, 0, 0.1),  80%, rgba(0, 0, 0, 0.8)), url("<%= cl_image_path  @swimming_pool.photo.key %> ")'>
     <h1 class="text-center p-2"><%= @swimming_pool.name.capitalize %></h1>
     <h3 class="text-white p-4"><%= @swimming_pool.price_per_day %>€/day</h3>
@@ -47,11 +42,12 @@
       </div>
     </div>
 
+<%# calcul du prix et reservation %>
+
     <div class="item price" data-price-target="price" data-price="<%= @swimming_pool.price_per_day %>">
-      <h3><%= @swimming_pool.price_per_day %>€/day</h3>
       <h3 data-price-target="total"> 0€</h3>
     </div>
-  </div>
+  <div>
 
   <div class="price_wrapper">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
