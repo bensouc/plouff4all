@@ -40,7 +40,7 @@ class SwimmingPoolsController < ApplicationController
   def show
     @swimming_pool = SwimmingPool.find(params[:id])
     @new_booking = Booking.new
-    @swimming_pools = SwimmingPool.all.sample(4)
+    @swimming_pools = SwimmingPool.all.sample(3)
   end
 
   private
