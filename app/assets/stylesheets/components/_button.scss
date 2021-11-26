@@ -6,14 +6,16 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-ghost:hover {
   opacity: 1;
+  text-decoration: underline;
 }
 
 .btn-flat {
-  color: white;
+  // color: white;
   padding: 8px 24px;
   border-radius: 4px;
   background: $blue;
@@ -21,7 +23,7 @@
 }
 
 .btn-flat:hover {
-  background: $white;
+
   color: $blue;
 }
 

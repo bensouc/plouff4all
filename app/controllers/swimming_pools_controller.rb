@@ -40,6 +40,8 @@ class SwimmingPoolsController < ApplicationController
     @swimming_pool.user = current_user
     @swimming_pool.save
     current_user.role = 'owner'
+    current_user.save
+
     redirect_to swimming_pools_path
   end
 
