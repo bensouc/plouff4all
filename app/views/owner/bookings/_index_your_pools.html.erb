@@ -1,15 +1,13 @@
 <%@pools.each do |pool|%>
-    <div class="card-booking">
+    <div class="card-booking" width="300px">
       <%= cl_image_tag  pool.photo.key, class:'img' %>
       <div class="card-booking-infos w-100 flex-column">
         <div class='p-2 text-start'>
           <strong><%=pool.name%></strong>
-          <i class="fas fa-swimming-pool text-danger"></i>
-        </div>
+                  </div>
         <div class="p-2 text-start">
         Actual Price : <strong><%=pool.price_per_day%> €/day</strong>
         </div>
       </div>
-
     </div>
 <%end%>

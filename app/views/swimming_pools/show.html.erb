@@ -20,12 +20,12 @@
 
           <li class="mb-2"><i class="fas fa-arrows-alt-v mr-2"></i><%=@swimming_pool.max_depth %><span>m deep</span></li>
           <% if @swimming_pool.treatment %>
-          <li class="mb-2"><i class="fas fa-water mr-2"></i><span>Natural treatment</span></li>
+          <li class="mb-2"><i class="fas fa-water mr-2 text-primary"></i><span>Natural treatment</span></li>
           <% else %>
-          <li class="mb-2"><i class="fas fa-water mr-2"></i><span>Chemical treatment</span></li>
+          <li class="mb-2"><i class="fas fa-water mr-2 text-primary"></i><span>Chemical treatment</span></li>
           <% end %>
-          <li class="mb-2"><i class="fas fa-thermometer-three-quarters mr-2"></i><%=@swimming_pool.temperature %><span>°C</span></li>
-          <li class="mb-2"><i class="fas fa-users mr-2"></i><%=@swimming_pool.max_people %><span> max</span></li>
+          <li class="mb-2"><i class="fas fa-thermometer-three-quarters mr-2 text-danger"></i><%=@swimming_pool.temperature %><span>°C</span></li>
+          <li class="mb-2"><i class="fas fa-users mr-2 text-success"></i><%=@swimming_pool.max_people %><span> max</span></li>
           <% if@swimming_pool.kids_friendly %>
             <li class="d-inline"><i class="fas fa-child"></i></li>
           <% end %>
@@ -83,23 +83,55 @@
     </div>
   <div>
 
-
-  <h2 class="text-center mt-4">Our customers also recommend...</h2>
-  <div class="top-rated-box ">
-    <% @swimming_pools.each do |pool| %>
-      <%= link_to swimming_pool_path(pool) do %>
-        <div class="card-index item">
-          <%= cl_image_tag pool.photo.key %>
-          <div class="content-home-swimming w-100">
-            <div class='d-flex justify-content-between'>
-              <h2><%= pool.name %></h2>
-              <h2 class="rating" style='color'>5 ★</h2>
-            </div>
-            <div class=''>
-              <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+  <div class="price_wrapper">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <%= form_with model: [@swimming_pool, @new_booking], authenticity_token: true, remote: true do |f| %>
+      <div class="start_date">
+        <%= f.text_field :start_date,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.zone.now,
+            'price-target': 'start',
+            'action': 'change->price#computPrice'
+          } %>
+      </div>
+      <div class="end_date">
+        <%= f.text_field :end_date,
+          data: {
+            controller: "flatpickr",
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.zone.now,
+            'price-target': 'end',
+            'action': 'change->price#computPrice'
+          } %>
+      </div>
+        <%= f.submit "Plonger ! " %>
     <% end %>
   </div>
+  <!-- TOP RATED-->
+
+    <h1 class="text-center mt-4">Soo SAD, no Ploof experience Booked...<br>
+    <strong> Pick a pool below</strong> and live the PLOOF of your Life !!!</h1>
+  <div>
+    <div class="top-rated-box recommandation">
+
+      <% @swimming_pools.each do |pool| %>
+        <%= link_to swimming_pool_path(pool) do %>
+          <div class="card-index item">
+            <%= cl_image_tag pool.photo.key %>
+            <div class="content-home-swimming w-100">
+              <div class='d-flex justify-content-between'>
+                <h2><%= pool.name %></h2>
+                <h2 class="rating">5 ★</h2>
+              </div>
+              <div class=''>
+                <p class="location"><i class="fas fa-location-arrow"></i> <%= pool.address.capitalize %></p>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+   </div>
