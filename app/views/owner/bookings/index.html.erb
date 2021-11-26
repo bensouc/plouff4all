@@ -1,15 +1,19 @@
 <div>
   <div class="dashboard-top">
-    <h1><%=current_user.first_name%>'s Dashboard</h1>
+    <div class='d-flex justify-content-start'>
+      <h1><%=current_user.first_name%>'s Dashboard</h1>
+      <%=link_to 'Your Ploofs', '#your_plouf', style: "color: $blue, text-decoration: none", class: 'link_dashboard' %>
+      <%=link_to 'Your Bookings', '#your_bookings', style: "color: $blue, text-decoration: none ",class: 'link_dashboard'%>
+    </div>
   </div>
-  <div>
+  <div id='your_plouf'>
     <%if current_user.role == 'owner'%>
       <div>
       <%= render "/owner/bookings/index"%>
       </div>
     <% end %>
   </div>
-  <div>
+  <div id='your_bookings'>
     <%= render "/owner/bookings/my_bookings"%>
   </div>
 </div>
